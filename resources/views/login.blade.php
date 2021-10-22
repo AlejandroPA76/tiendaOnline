@@ -8,14 +8,14 @@
     <link rel="resources/css" href="login.css">
 </head>
 <body>
-    <form action="login.php" method="POST" class="form-box">
+    <form action="/validar" method="get" class="form-box">
     <h1 class="form-title">Iniciar sesión</h1>
 
     <p class="form-text"><label form="nickname">Username</label>
-    <input type="text" name="username""</p>
+    <input type="text" name="usuario""</p>
 
     <p class="form-text"><lavel for="password">Password</lavel>
-    <input type="text" name="password"></p>
+    <input type="password" name="contra"></p>
     
     <button type="submit" name="login">Login</button>
     </form>
