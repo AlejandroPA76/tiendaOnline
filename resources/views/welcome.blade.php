@@ -103,6 +103,6 @@
     @endif
     
     @if ($usuario)
-        <a class="boton pafuera" href="/salir">Salir pa fuera</a>
+        <a class="boton pafuera" href="/salir">Salir</a>
     @endif
 @endsection
