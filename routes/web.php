@@ -21,6 +21,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('validar', 'AutenticarController@validar');
+Route::get('salir', 'AutenticarController@salir');
+
 Route::get('supervisor', function() {
     return view('supervisor');
 })->middleware('auth');
@@ -34,3 +37,5 @@ Route::get('cliente', function() {
     $usuario = Auth::User();
     return view('cliente', compact('categorias', 'usuario'));
 });
+
+Route::get('usuarios', 'UsuarioController@index');
