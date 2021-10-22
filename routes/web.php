@@ -20,3 +20,17 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+Route::get('supervisor', function() {
+    return view('supervisor');
+})->middleware('auth');
+
+Route::get('encargado' ,function() {
+    return view('encargado');
+});
+
+Route::get('cliente', function() {
+    $categorias = Categoria::all();
+    $usuario = Auth::User();
+    return view('cliente', compact('categorias', 'usuario'));
+});
