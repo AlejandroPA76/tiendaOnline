@@ -37,5 +37,3 @@ Route::get('cliente', function() {
     $usuario = Auth::User();
     return view('cliente', compact('categorias', 'usuario'));
 });
-
-Route::get('usuarios', 'UsuarioController@index');

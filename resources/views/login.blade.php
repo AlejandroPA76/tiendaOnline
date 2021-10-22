@@ -31,15 +31,15 @@
                         <h4>Iniciar sesión</h4>
                         <div class="col-12">
                             <label>Ingresa tu usuario:</label>
-                            <input type="text" name="username" class="form-control" placeholder="correo">
+                            <input type="text" name="usuario" class="form-control" placeholder="correo">
                         </div>
                         <div class="col-12">
                             <label>Ingresa tu contrasena:</label>
-                            <input type="password" name="password" class="form-control" placeholder="constrasena">
+                            <input type="password" name="contra" class="form-control" placeholder="constrasena">
                         </div>
             
                         <div class="col-12">
-                <button type="submit" class="btn btn-dark float-end">{{ __('Login') }}</button>
+                <button type="submit" vale="Ingresar" class="btn btn-dark float-end">{{ __('Login') }}</button>
                         </div>
                     </form>
                     <hr class="mt-4">
