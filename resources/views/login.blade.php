@@ -44,7 +44,7 @@
                     </form>
                     <hr class="mt-4">
                     <div class="col-12">
-                        <p class="text-center mb-0">Eres nuevo? <a href="#">registrate</a></p>
+                        <p class="text-center mb-0">Eres nuevo? <a href="{{route('fregistro')}}">registrate</a></p>
                     </div>
                 </div>
             </div>

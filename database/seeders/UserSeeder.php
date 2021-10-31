@@ -19,6 +19,8 @@ class UserSeeder extends Seeder
        DB::table('users')->insert([
             'name' => 'supervisor',
             'email' =>'supervisor@gmail.com',
+            'apellido_p' => 'h',
+            'apellido_m' => 'h',
             'password' => Hash::make('1234'),
             'rol'=>'supervisor',
         ]); 
@@ -26,6 +28,8 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'contador',
             'email' =>'contador@gmail.com',
+            'apellido_p' => 'h',
+            'apellido_m' => 'h',
             'password' => Hash::make('1234'),
             'rol'=>'contador',
         ]); 
@@ -33,6 +37,8 @@ class UserSeeder extends Seeder
          DB::table('users')->insert([
             'name' => 'cliente',
             'email' =>'cliente@gmail.com',
+            'apellido_p' => 'h',
+            'apellido_m' => 'h',
             'password' => Hash::make('1234'),
             'rol'=>'cliente',
         ]); 

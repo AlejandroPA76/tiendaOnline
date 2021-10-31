@@ -59,3 +59,9 @@ return view('cliente.index');
 Route::post('/autenticar/usuario',[AutenticarUser::class,'validar'])->name('autenticar.usuario');
 
 Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
+
+Route::get('/register',function(){
+return view('register');
+})->name('fregistro');
+
+Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar');

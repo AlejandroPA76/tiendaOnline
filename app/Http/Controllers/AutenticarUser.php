@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AutenticarUser extends Controller
 {
@@ -32,5 +33,18 @@ class AutenticarUser extends Controller
     public function logout(){
         Auth::logout();
         return redirect('/');
+    }
+
+    public function register(Request $request){
+        $r = new User;
+        $r->name = $request->input('name');
+        $r->apellido_p = $request->input('ApellidoP');
+        $r->apellido_m = $request->input('ApellidoM');
+        $r->email = $request->input('email');
+        $r->password = Hash::make($request->input('password'));
+        $r->rol = $request->input('rol');
+
+        $r->save();
+        return redirect('cliente/index');
     }
 }
