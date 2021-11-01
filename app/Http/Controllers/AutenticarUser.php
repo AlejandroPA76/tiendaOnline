@@ -24,7 +24,7 @@ class AutenticarUser extends Controller
 
     if(Auth::attempt($credenciales) && auth::user()->rol=="cliente"){
         
-            return view('cliente.index');
+            return redirect()->route('show.cats');
     }
     return 'datos erroneos';
     

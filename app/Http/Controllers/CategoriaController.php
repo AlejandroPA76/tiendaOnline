@@ -8,7 +8,7 @@ class CategoriaController extends Controller
 {
     
      public function showcat(){
-        $cats = Categoria::get();
+        $cats = Categoria::orderBy('created_at','desc')->get();
         return view('cliente.index', compact('cats'));
     }
 }

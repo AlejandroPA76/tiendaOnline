@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Categoria;
 
 class SupervisorController extends Controller
 {
@@ -14,6 +15,25 @@ class SupervisorController extends Controller
      public function __construct(){
         $this->middleware('auth');
         $this->middleware('supervisor',['only'=> ['index']]);
+    }
+
+    public function crudCat(){
+        $cats = Categoria::orderBy('created_at','desc')->get();
+        return view('supervisor.crudCategoria',compact('cats'));
+    }
+
+    public function addCat(){
+        return view('supervisor.agregarCat');
+    }
+
+    public function almacenar(Request $request){
+       
+        $newcat = new Categoria;
+        $newcat->nombre = $request->input('nombre');
+        $newcat->descripcion = $request->input('descripcion');
+        $newcat->imagen = $request->input('imagen');
+        $newcat->activa = $request->input('activa');
+        $newcat->save();
     }
 
     public function index()

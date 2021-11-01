@@ -60,7 +60,7 @@ Route::get('/index/cliente',function(){
 return view('cliente.index');
 })->middleware('auth')->name('indexCli');
 
-
+///////////////////////////////////////////////////////////////////////////
 Route::post('/autenticar/usuario',[AutenticarUser::class,'validar'])->name('autenticar.usuario');
 
 Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
@@ -77,4 +77,10 @@ Route::get('cliente/index',[CategoriaController::class,'showcat'])->name('show.c
 Route::get('/cliente',[ClienteController::class,'index'])->name('cliente.index');
 Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
 Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');
+
 Route::get('/supervisor',[SupervisorController::class,'index'])->name('supervisor.index');
+
+Route::get('supervisor/categorias',[SupervisorController::class,'crudCat'])->name('cats.table');
+
+Route::get('supervisor/agregar/cat',[SupervisorController::class,'addCat'])->name('add.cat');
+Route::post('supervisor/almacenar',[SupervisorController::class,'almacenar'])->name('almacenar.cat');

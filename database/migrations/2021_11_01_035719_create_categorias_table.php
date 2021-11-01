@@ -19,7 +19,6 @@ class CreateCategoriasTable extends Migration
             $table->text('descripcion');
             $table->string('imagen')->nullable();
             $table->string('activa');
-            $table->unsignedBigInteger('');
             $table->timestamps();
         });
     }
