@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutenticarUser;
-
+use App\Http\Controllers\CategoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,3 +65,6 @@ return view('register');
 })->name('fregistro');
 
 Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar');
+
+
+Route::get('cliente/index',[CategoriaController::class,'showcat'])->name('show.cats');

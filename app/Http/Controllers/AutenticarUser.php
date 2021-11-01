@@ -23,7 +23,7 @@ class AutenticarUser extends Controller
     }
 
     if(Auth::attempt($credenciales) && auth::user()->rol=="cliente"){
-        request()->session()->regenerate();
+        
             return view('cliente.index');
     }
     return 'datos erroneos';
@@ -43,7 +43,6 @@ class AutenticarUser extends Controller
         $r->email = $request->input('email');
         $r->password = Hash::make($request->input('password'));
         $r->rol = $request->input('rol');
-
         $r->save();
         return redirect('cliente/index');
     }
