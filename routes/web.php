@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutenticarUser;
 use App\Http\Controllers\CategoriaController;
+
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContadorController;
+use App\Http\Controllers\EncargadoController;
+use App\Http\Controllers\SupervisorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,3 +73,8 @@ Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar'
 
 
 Route::get('cliente/index',[CategoriaController::class,'showcat'])->name('show.cats');
+
+Route::get('/cliente',[ClienteController::class,'index'])->name('cliente.index');
+Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
+Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');
+Route::get('/supervisor',[SupervisorController::class,'index'])->name('supervisor.index');
