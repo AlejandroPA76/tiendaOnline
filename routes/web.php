@@ -74,7 +74,6 @@ Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar'
 
 Route::get('cliente/index',[CategoriaController::class,'showcat'])->name('show.cats');
 
-Route::get('/cliente',[ClienteController::class,'index'])->name('cliente.index');
 Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
 Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');
 
@@ -83,4 +82,5 @@ Route::get('/supervisor',[SupervisorController::class,'index'])->name('superviso
 Route::get('supervisor/categorias',[SupervisorController::class,'crudCat'])->name('cats.table');
 
 Route::get('supervisor/agregar/cat',[SupervisorController::class,'addCat'])->name('add.cat');
+
 Route::post('supervisor/almacenar',[SupervisorController::class,'almacenar'])->name('almacenar.cat');
