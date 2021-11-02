@@ -8,6 +8,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContadorController;
 use App\Http\Controllers\EncargadoController;
 use App\Http\Controllers\SupervisorController;
+use App\Models\Categoria;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,15 +21,15 @@ use App\Http\Controllers\SupervisorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $cats = Categoria::orderBy('created_at','desc')->get();
+    return view('cliente.index', compact('cats'));
+    
+})->name('casa');
 
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::get('validar', 'AutenticarController@validar');
-Route::get('salir', 'AutenticarController@salir');
 
 Route::get('supervisor', function() {
     return view('supervisor');
@@ -43,8 +44,6 @@ Route::get('cliente', function() {
     $usuario = Auth::User();
     return view('cliente', compact('categorias', 'usuario'));
 });
-
-Route::get('usuarios', 'UsuarioController@index');
 
 
 Route::get('/index/supervisor',function(){
@@ -71,16 +70,10 @@ return view('register');
 
 Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar');
 
-
-Route::get('cliente/index',[CategoriaController::class,'showcat'])->name('show.cats');
-
 Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
 Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');
 
 Route::get('/supervisor',[SupervisorController::class,'index'])->name('supervisor.index');
+//////////////////////////////////////////////////////////////////////////////////
 
-Route::get('supervisor/categorias',[SupervisorController::class,'crudCat'])->name('cats.table');
-
-Route::get('supervisor/agregar/cat',[SupervisorController::class,'addCat'])->name('add.cat');
-
-Route::post('supervisor/almacenar',[SupervisorController::class,'almacenar'])->name('almacenar.cat');
+Route::resource('categorias',CategoriaController::class);

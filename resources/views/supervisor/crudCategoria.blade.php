@@ -1,12 +1,14 @@
-@extends('supervisor.index')
+@extends('layouts.layouts')
 
-@section('body')
+@section('title')
+
+@section('contenido')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-11">
             <div class="card">
                 <div class="card-header">
-                    <a class="btn btn-primary" href="{{route('add.cat')}}">Agregar Categoria</a>
+                    <a class="btn btn-primary" href='/categorias/create'>Agregar Categoria</a>
                     
                 </div>
 
@@ -43,9 +45,16 @@
                                 </td>
                         
                                 <td>
-        <a href="#" class="btn btn-info btn-sm">Editar</a>
-
-                                 
+        <a href="/categorias/{{$cat->id}}/edit" class="btn btn-info btn-sm">Editar</a>
+                                 </td>
+                                 <td>
+         <form action="/categorias/{{$cat->id}}" method="POST">
+             @csrf
+             @method('delete')
+             <input type="submit" class="btn btn-danger btn-sm" value="Eliminar" onclick="return confirm('deseas borrar?')">
+             
+         </form>
+                                 </td>
                             </tr>
                             @endforeach
                           </tbody>

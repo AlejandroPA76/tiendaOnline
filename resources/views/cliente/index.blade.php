@@ -1,41 +1,16 @@
-Bienvenido cliente
+@extends('layouts.layouts')
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
+@section('title','Bienvenido cliente')
 
-	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Login!</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-<li><a href="{{route('cerrar.usuario')}}">Logout</a></li>
-
-<div class="container">
-	
+@section('contenido')
+  <div class="container">
+  
   <div class="row">
-  	@foreach($cats as $cat)
+    @foreach($cats as $cat)
     <div class="col-12 col-sm-8 col-md-6 col-lg-4">
       <div class="card">
-      	
-        <img class="card-img-top" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-1.jpg" alt="Bologna">
+        
+        <img class="card-img-top" src="https://i1.wp.com/ikerbit.com/wp-content/uploads/2021/04/laravel.jpeg?fit=1200%2C630&ssl=1" alt="Bologna">
         <div class="card-body">
           <h4 class="card-title">{{$cat->nombre}}</h4>
           <p class="card-text">{{$cat->descripcion}}</p>
@@ -51,5 +26,5 @@ Bienvenido cliente
      
 </div>
 
-</body>
-</html>
+@endsection
+

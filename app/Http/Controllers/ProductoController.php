@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Categoria;
 
-class CategoriaController extends Controller
+class ProductoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $cats = Categoria::get();
-        return view('supervisor.crudCategoria',compact('cats'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('supervisor.agregarCat');
+        //
     }
 
     /**
@@ -36,13 +34,7 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        $newcat = new Categoria;
-        $newcat->nombre = $request->input('nombre');
-        $newcat->descripcion = $request->input('descripcion');
-        $newcat->imagen = $request->input('imagen');
-        $newcat->activa = $request->input('activa');
-        $newcat->save();
-        return redirect('categorias');
+        //
     }
 
     /**
@@ -64,8 +56,7 @@ class CategoriaController extends Controller
      */
     public function edit($id)
     {
-        $rCat = Categoria::find($id);
-        return view('supervisor.editarCat',compact('rCat'));
+        //
     }
 
     /**
@@ -77,14 +68,7 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $upcat=Categoria::find($id);
-        $upcat->nombre = $request->input('nombre');
-        $upcat->descripcion = $request->input('descripcion');
-        $upcat->imagen = $request->input('imagen');
-        $upcat->activa = $request->input('activa');
-        $upcat->save();
-
-        return redirect('categorias');
+        //
     }
 
     /**
@@ -95,8 +79,6 @@ class CategoriaController extends Controller
      */
     public function destroy($id)
     {
-        $delcat=Categoria::find($id);
-        $delcat->delete();
-        return redirect('categorias');
+        //
     }
 }

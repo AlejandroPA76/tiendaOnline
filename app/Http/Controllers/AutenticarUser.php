@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Categoria;
 
 class AutenticarUser extends Controller
 {
@@ -23,8 +24,9 @@ class AutenticarUser extends Controller
     }
 
     if(Auth::attempt($credenciales) && auth::user()->rol=="cliente"){
+        $cats = Categoria::orderBy('created_at','desc')->get();
+        return view('cliente.index', compact('cats'));
         
-            return redirect()->route('show.cats');
     }
     return 'datos erroneos';
     
