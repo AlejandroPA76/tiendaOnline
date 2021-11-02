@@ -68,7 +68,8 @@
                         </div>
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-dark float-end">{{ __('Register') }}</button>
+    <button type="submit" class="btn btn-dark float-end">{{('Register')}}</button>
+    <a href="{{route('login')}}"></a>
                         </div>
 
                           <div class="col-12">

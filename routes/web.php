@@ -21,63 +21,53 @@ use App\Models\Categoria;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//home de todos
 Route::get('/', function () {
     $cats = Categoria::orderBy('created_at','desc')->get();
     return view('cliente.index', compact('cats'));
     
 })->name('casa');
-
+//////////////////////////////////
+//menu login y registrar
 Route::get('/login', function () {
     return view('login');
 })->name('login');
-
-
-Route::get('supervisor', function() {
-    return view('supervisor');
-})->middleware('auth');
-
-Route::get('encargado' ,function() {
-    return view('encargado');
-});
-
-Route::get('cliente', function() {
-    $categorias = Categoria::all();
-    $usuario = Auth::User();
-    return view('cliente', compact('categorias', 'usuario'));
-});
-
-
-Route::get('/index/supervisor',function(){
-return view('supervisor.index');
-})->name('indexS');
-
-Route::get('/index/contador',function(){
-return view('contador.index');
-})->name('indexCo');
-
-
-Route::get('/index/cliente',function(){
-return view('cliente.index');
-})->middleware('auth')->name('indexCli');
-
-///////////////////////////////////////////////////////////////////////////
-Route::post('/autenticar/usuario',[AutenticarUser::class,'validar'])->name('autenticar.usuario');
-
-Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
 
 Route::get('/register',function(){
 return view('register');
 })->name('fregistro');
 
+////////////////////////////////////
+//menu de empleados
+Route::get('/index/supervisor',function(){
+return view('supervisor.index');
+})->name('indexS');
+
+Route::get('encargado' ,function() {
+    return view('encargado');
+});
+
+Route::get('/index/contador',function(){
+return view('contador.index');
+})->name('indexCo');
+///////////////////////////////////////////////////////////////////////////
+
+//////////////todo lo que tenga que ver con el usuario
+Route::post('/usuario',[AutenticarUser::class,'validar'])->name('autenticar.usuario');
+
+Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
+
 Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar');
 
+////////////////////////////////////
+///menu respectivo de cada rol
 Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
 Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');
 
 Route::get('/supervisor',[SupervisorController::class,'index'])->name('supervisor.index');
 //////////////////////////////////////////////////////////////////////////////////
-
+/////crud categorias y productos
 Route::resource('categorias',CategoriaController::class);
 
 Route::resource('productos',ProductoController::class);
+////con esto veo el id de la categoria que se va a presionar

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
+use DB;
 
 class ProductoController extends Controller
 {
@@ -12,7 +13,7 @@ class ProductoController extends Controller
     {
         //
         $pds = Producto::all();
-        echo($pds);
+        
        // $pds['categoria_id']=Categoria::find($pds['categoria_id'])->get('nombre');
 
         return view('supervisor.producto.index',compact('pds'));
@@ -58,10 +59,11 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        $sl = Producto::find($id);
-        $nm = Categoria::find($sl->categoria_id);     
-
-        return view('CRUD_producto.mostrarP',compact('sl','nm'));
+        //$sl = Producto::find($id);
+        //$nm = Categoria::find($sl->categoria_id);     
+        //return view('CRUD_producto.mostrarP',compact('sl','nm'));
+        $Productos = DB::table('productos')->where('categoria_id',$id)->get();
+        return view('cliente.producto.mostrarProductos',compact('Productos'));
     }
 
     /**
@@ -108,4 +110,5 @@ class ProductoController extends Controller
         $nus->delete();
         return redirect('productos');
     }
+
 }
