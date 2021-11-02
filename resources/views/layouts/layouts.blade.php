@@ -37,7 +37,7 @@
 
                   @if(auth()->user()->rol=="supervisor")
                   <li><a href='/categorias'>Categorias</a></li>
-                  <li><a href="#">Productos</a></li>
+                  <li><a href="/productos">Productos</a></li>
                   <li><a href={{route('indexS')}}>home</a></li>
                   @endif
 

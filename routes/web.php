@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutenticarUser;
 use App\Http\Controllers\CategoriaController;
 
+use App\Http\Controllers\ProductoController;
+
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContadorController;
 use App\Http\Controllers\EncargadoController;
@@ -77,3 +79,5 @@ Route::get('/supervisor',[SupervisorController::class,'index'])->name('superviso
 //////////////////////////////////////////////////////////////////////////////////
 
 Route::resource('categorias',CategoriaController::class);
+
+Route::resource('productos',ProductoController::class);

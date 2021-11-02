@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
+use App\Models\Categoria;
 
 class ProductoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+   public function index()
     {
         //
-    }
+        $pds = Producto::all();
+        echo($pds);
+       // $pds['categoria_id']=Categoria::find($pds['categoria_id'])->get('nombre');
 
+        return view('supervisor.producto.index',compact('pds'));
+
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -23,7 +25,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        $cts = Categoria::all();
+        return view('supervisor.producto.agregarProduc',compact('cts'));
     }
 
     /**
@@ -34,7 +37,17 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nus = new Producto();
+        $nus->nombre = $request->input('nombre');
+        $nus->descripcion = $request->input('descripcion');
+        $nus->precio = $request->input('precio');
+        $nus->imagen =$request->input('imagen');
+        $nus->stock =$request->input('stock');
+        $nus->categoria_id = $request->input('ct');
+        
+        $nus->save();
+
+        return redirect('productos');
     }
 
     /**
@@ -45,7 +58,10 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        $sl = Producto::find($id);
+        $nm = Categoria::find($sl->categoria_id);     
+
+        return view('CRUD_producto.mostrarP',compact('sl','nm'));
     }
 
     /**
@@ -56,7 +72,9 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sl = Producto::find($id);
+        $cts = Categoria::all();
+        return view('CRUD_producto.editarP',compact('sl','cts'));
     }
 
     /**
@@ -68,7 +86,14 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nus = Producto::find($id);
+        $nus->namep = $request->input('name');
+        $nus->price = $request->input('price');
+        $nus->description = $request->input('description');
+        $nus->categoria_id = $request->input('ct');
+        $nus->save();
+
+        return redirect('productos');
     }
 
     /**
@@ -79,6 +104,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nus = Producto::find($id);
+        $nus->delete();
+        return redirect('productos');
     }
 }

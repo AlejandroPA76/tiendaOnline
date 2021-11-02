@@ -18,8 +18,8 @@ class CreateProductosTable extends Migration
             $table->string('nombre');
             $table->text('descripcion')->nullable();
             $table->double('precio',8,2);
-            $table->text('concesionado');
-            $table->integer('existencia');
+            $table->string('imagen')->nullable();
+             $table->integer('stock');
             //llave foranea categoria_id pertenece a la tabla categorias
             $table->foreignId('categoria_id')->constrained('categorias');
             $table->timestamps();
