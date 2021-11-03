@@ -33,9 +33,13 @@ class AutenticarUser extends Controller
     }
 
     public function updatePassword($id){
+        if($id != auth::user()->id){
+            return redirect('usuario/'.auth::user()->id.'/updatePassword');
+        }else{
         $sl = User::find($id);
         $id = auth::user()->id;
         return view('cliente.perfil.ContraEditar',compact('sl','id'));
+        }
     }
 
     public function update(Request $request, $id){

@@ -62,8 +62,13 @@ class UsuarioController extends Controller
     public function show($id)
     {
         //
-        $us = User::find($id);
-        return view('cliente.perfil.index',compact('us','id'));
+        if($id != auth::user()->id){
+            return redirect('usuarios/'.auth::user()->id);
+        }else{
+            $us = User::find($id);
+            return view('cliente.perfil.index',compact('us','id'));
+        }
+            
     }
 
     /**
@@ -76,9 +81,13 @@ class UsuarioController extends Controller
     {
         //
         
-        $sl = User::find($id);
-        $id = auth::user()->id;
-        return view('cliente.perfil.perfilEditar',compact('sl','id'));
+        if($id != auth::user()->id){
+            return redirect('usuarios/'.auth::user()->id.'/edit');
+        }else{
+            $sl = User::find($id);
+            $id = auth::user()->id;
+            return view('cliente.perfil.perfilEditar',compact('sl','id'));
+        }
         
     }
 
