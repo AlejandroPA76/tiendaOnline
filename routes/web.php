@@ -64,9 +64,10 @@ Route::post('/usuario',[AutenticarUser::class,'validar'])->name('autenticar.usua
 
 Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
 
-Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar');
-
+Route::get('usuario/{id}/updatePassword',[AutenticarUser::class,'updatePassword'])->name('updatePassword');
+Route::put('usuario/{id}/update',[AutenticarUser::class,'update'])->name('update');
 ////////////////////////////////////
+
 ///menu respectivo de cada rol
 Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
 Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');

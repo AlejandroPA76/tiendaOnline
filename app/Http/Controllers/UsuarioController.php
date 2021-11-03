@@ -75,6 +75,11 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         //
+        
+        $sl = User::find($id);
+        $id = auth::user()->id;
+        return view('cliente.perfil.perfilEditar',compact('sl','id'));
+        
     }
 
     /**
@@ -86,7 +91,16 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+
+        $us = User::find($id);
+        $us->name = $request->input('name');
+        $us->apellido_p = $request->input('ApellidoP');
+        $us->apellido_m = $request->input('ApellidoM');
+        $us->email = $request->input('email');
+        $us->save();
+        
+        return redirect('usuarios/'.$id);
     }
 
     /**
