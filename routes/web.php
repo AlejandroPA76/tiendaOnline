@@ -6,7 +6,7 @@ use App\Http\Controllers\CategoriaController;
 
 use App\Http\Controllers\ProductoController;
 
-use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ContadorController;
 use App\Http\Controllers\EncargadoController;
 use App\Http\Controllers\SupervisorController;
@@ -63,11 +63,13 @@ Route::post('usuario/alta',[AutenticarUser::class,'register'])->name('registrar'
 ///menu respectivo de cada rol
 Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
 Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');
-
 Route::get('/supervisor',[SupervisorController::class,'index'])->name('supervisor.index');
 //////////////////////////////////////////////////////////////////////////////////
-/////crud categorias y productos
-Route::resource('categorias',CategoriaController::class);
 
+/////crud categorias y productos
+
+Route::resource('categorias',CategoriaController::class);
 Route::resource('productos',ProductoController::class);
+Route::resource('usuarios',UsuarioController::class);
+
 ////con esto veo el id de la categoria que se va a presionar

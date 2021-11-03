@@ -8,7 +8,7 @@
     <input type="text" class="form-control" placeholder="Buscar" name="search">
                         <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
 
-    @endsection
+  @endsection
 
 
   <div class="row">

@@ -39,25 +39,25 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav">
-               @guest
-                  <li><a href="{{route('casa')}}" class="nav-item nav-link active">Home</a></li>
-                  <li><a href="{{route('login')}}" class="nav-item nav-link active">Login</a></li>
-                  <li><a href="{{route('fregistro')}}" class="nav-item nav-link active">Registrate</a></li>
+                  @guest
+                    <li><a href="{{route('casa')}}" class="nav-item nav-link active">Home</a></li>
+                    <li><a href="{{route('login')}}" class="nav-item nav-link active">Login</a></li>
+                    <li><a href="{{route('fregistro')}}" class="nav-item nav-link active">Registrate</a></li>
                   @endguest
                    
-                   @auth
-                 
-                  @if(auth()->user()->rol=="cliente")
-                  <li><a href="#" class="nav-item nav-link active">carrito</a></li>
-                  @endif
+                  @auth                 
+                    @if(auth()->user()->rol=="cliente")
+                      <li><a href="#" class="nav-item nav-link active">carrito</a></li>
+                    @endif
 
-                  @if(auth()->user()->rol=="supervisor")
-                  <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
-                  <li><a href="/productos" class="nav-item nav-link active">Productos</a></li>
-                  <li><a href="{{route('indexS')}}" class="nav-item nav-link active">home</a></li>
-                  @endif
+                    @if(auth()->user()->rol=="supervisor")
+                      <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
+                      <li><a href="/productos" class="nav-item nav-link active">Productos</a></li>
+                      <li><a href="{{route('indexS')}}" class="nav-item nav-link active">home</a></li>
+                    @endif
 
-                  <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>
+                      <li><a href="/usuarios/{{$id}}" class="nav-item nav-link active">Mi Perfil</a></li>
+                      <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>
                   @endauth
                   
                 </div>
