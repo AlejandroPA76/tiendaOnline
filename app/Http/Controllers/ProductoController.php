@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
 use DB;
+use Illuminate\Support\Facades\Auth;
+
+use function PHPUnit\Framework\isNull;
 
 class ProductoController extends Controller
 {
@@ -57,7 +60,15 @@ class ProductoController extends Controller
     {
        
         $Productos = DB::table('productos')->where('categoria_id',$id)->get();
-        return view('cliente.producto.mostrarProductos',compact('Productos'));
+        if(!Auth::check()){
+            $id = 0;
+            return view('cliente.producto.mostrarProductos',compact('Productos','id'));
+        }else{
+            $id = auth::user()->id;
+            return view('cliente.producto.mostrarProductos',compact('Productos','id'));
+        }
+        
+        
         
     }
 

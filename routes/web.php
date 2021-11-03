@@ -11,6 +11,7 @@ use App\Http\Controllers\ContadorController;
 use App\Http\Controllers\EncargadoController;
 use App\Http\Controllers\SupervisorController;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,13 @@ use App\Models\Categoria;
 //home de todos
 Route::get('/', function () {
     $cats = Categoria::orderBy('created_at','desc')->get();
-    return view('cliente.index', compact('cats'));
+    if(!Auth::check()){
+        $id = 0;
+        return view('cliente.index', compact('cats','id'));    
+    }else{
+        $id = auth::user()->id;
+        return view('cliente.index', compact('cats','id'));
+    }
     
 })->name('casa');
 //////////////////////////////////

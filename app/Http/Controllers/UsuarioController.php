@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Categoria;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
@@ -14,7 +18,9 @@ class UsuarioController extends Controller
     public function index()
     {
         //solo para el administrador
-
+        $cats = Categoria::orderBy('created_at','desc')->get();
+        $id = auth::user()->id;
+        return view('cliente.index', compact('cats','id'));
     }
 
     /**
@@ -25,6 +31,7 @@ class UsuarioController extends Controller
     public function create()
     {
         //
+        return view('register');
     }
 
     /**
@@ -35,7 +42,15 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $r = new User;
+        $r->name = $request->input('name');
+        $r->apellido_p = $request->input('ApellidoP');
+        $r->apellido_m = $request->input('ApellidoM');
+        $r->email = $request->input('email');
+        $r->password = Hash::make($request->input('password'));
+        $r->rol = $request->input('rol');
+        $r->save();
+        return redirect('/');
     }
 
     /**
@@ -47,8 +62,8 @@ class UsuarioController extends Controller
     public function show($id)
     {
         //
-        echo('Cleinte con el id: '.$id);
-
+        $us = User::find($id);
+        return view('cliente.perfil.index',compact('us','id'));
     }
 
     /**

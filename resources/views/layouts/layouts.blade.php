@@ -33,20 +33,25 @@
 <div class="m-4">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">Bienvenido</a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav">
                   @guest
-                    <li><a href="{{route('casa')}}" class="nav-item nav-link active">Home</a></li>
+                  <a href="/" class="navbar-brand">Bienvenido</a>
+                  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
                     <li><a href="{{route('login')}}" class="nav-item nav-link active">Login</a></li>
-                    <li><a href="{{route('fregistro')}}" class="nav-item nav-link active">Registrate</a></li>
+                    <li><a href="/usuarios/create" class="nav-item nav-link active">Registrate</a></li>
                   @endguest
                    
-                  @auth                 
+                  @auth
+                  <a href="/usuarios" class="navbar-brand">Bienvenido</a>
+                  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>                 
                     @if(auth()->user()->rol=="cliente")
+                      <li><a href="/usuarios/{{$id}}" class="nav-item nav-link active">Mi Perfil</a></li>
                       <li><a href="#" class="nav-item nav-link active">carrito</a></li>
                     @endif
 
@@ -56,7 +61,6 @@
                       <li><a href="{{route('indexS')}}" class="nav-item nav-link active">home</a></li>
                     @endif
 
-                      <li><a href="/usuarios/{{$id}}" class="nav-item nav-link active">Mi Perfil</a></li>
                       <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>
                   @endauth
                   
@@ -70,21 +74,6 @@
         </div>
     </nav>
 </div>
-
-  <div id="cont_nav">
-                <nav id="nav_menu">
-                  <ul>
-                  
-
-                 
-
-                  </ul>
-                  
-                </nav>
-            </div>
-
-  
-
   </header>
 <section>
   @yield('contenido')

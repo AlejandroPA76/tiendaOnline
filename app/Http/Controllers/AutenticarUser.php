@@ -25,8 +25,7 @@ class AutenticarUser extends Controller
 
     if(Auth::attempt($credenciales) && auth::user()->rol=="cliente"){
         $cats = Categoria::orderBy('created_at','desc')->get();
-        $id = auth::user()->id;
-        return view('cliente.index', compact('cats','id'));
+        return redirect('/usuarios');
         
     }
     return 'datos erroneos';
@@ -38,15 +37,5 @@ class AutenticarUser extends Controller
         return redirect('/');
     }
 
-    public function register(Request $request){
-        $r = new User;
-        $r->name = $request->input('name');
-        $r->apellido_p = $request->input('ApellidoP');
-        $r->apellido_m = $request->input('ApellidoM');
-        $r->email = $request->input('email');
-        $r->password = Hash::make($request->input('password'));
-        $r->rol = $request->input('rol');
-        $r->save();
-        return redirect('cliente/index');
-    }
+
 }
