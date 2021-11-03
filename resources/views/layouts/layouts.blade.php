@@ -26,29 +26,57 @@
 </head>
 <body>
 <header>
-  <div id="cont_nav">
-                <nav id="nav_menu">
-                  <ul>
-                  @auth
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="m-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Bienvenido</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav">
+               @guest
+                  <li><a href="{{route('casa')}}" class="nav-item nav-link active">Home</a></li>
+                  <li><a href="{{route('login')}}" class="nav-item nav-link active">Login</a></li>
+                  <li><a href="{{route('fregistro')}}" class="nav-item nav-link active">Registrate</a></li>
+                  @endguest
+                   
+                   @auth
                  
                   @if(auth()->user()->rol=="cliente")
-                  <li><a href="#">carrito</a></li>
+                  <li><a href="#" class="nav-item nav-link active">carrito</a></li>
                   @endif
 
                   @if(auth()->user()->rol=="supervisor")
-                  <li><a href='/categorias'>Categorias</a></li>
-                  <li><a href="/productos">Productos</a></li>
-                  <li><a href={{route('indexS')}}>home</a></li>
+                  <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
+                  <li><a href="/productos" class="nav-item nav-link active">Productos</a></li>
+                  <li><a href="{{route('indexS')}}" class="nav-item nav-link active">home</a></li>
                   @endif
 
-                  <li><a href="{{route('cerrar.usuario')}}">Logout</a></li>
+                  <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>
                   @endauth
+                  
+                </div>
+                <form class="d-flex">
+                    <div class="input-group">
+                        @yield('buscar')
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
 
-                  @guest
-                  <li><a href="{{route('fregistro')}}">registrate</a></li>
-                  <li><a href="{{route('login')}}">Login</a></li>
-                  <li><a href="{{route('casa')}}">home</a></li>
-                  @endguest
+  <div id="cont_nav">
+                <nav id="nav_menu">
+                  <ul>
+                  
+
+                 
 
                   </ul>
                   

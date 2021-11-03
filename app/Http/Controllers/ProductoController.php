@@ -9,13 +9,9 @@ use DB;
 
 class ProductoController extends Controller
 {
-   public function index()
+   public function index(Request $request)
     {
-        //
         $pds = Producto::all();
-        
-       // $pds['categoria_id']=Categoria::find($pds['categoria_id'])->get('nombre');
-
         return view('supervisor.producto.index',compact('pds'));
 
     }
@@ -59,11 +55,10 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //$sl = Producto::find($id);
-        //$nm = Categoria::find($sl->categoria_id);     
-        //return view('CRUD_producto.mostrarP',compact('sl','nm'));
+       
         $Productos = DB::table('productos')->where('categoria_id',$id)->get();
         return view('cliente.producto.mostrarProductos',compact('Productos'));
+        
     }
 
     /**

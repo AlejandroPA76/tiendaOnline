@@ -4,7 +4,13 @@
 
 @section('contenido')
   <div class="container">
-  
+  @section('buscar')
+    <input type="text" class="form-control" placeholder="Buscar" name="search">
+                        <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+
+    @endsection
+
+
   <div class="row">
     @foreach($Productos as $pro)
     <div class="col-12 col-sm-8 col-md-6 col-lg-4">

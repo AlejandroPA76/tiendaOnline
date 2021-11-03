@@ -3,8 +3,15 @@
 @section('title','Bienvenido cliente')
 
 @section('contenido')
+
   <div class="container">
-  
+    @section('buscar')
+<input type="text" class="form-control" placeholder="Search">
+  <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+  <a href=""></a>
+
+
+    @endsection
   <div class="row">
     @foreach($cats as $cat)
     <div class="col-12 col-sm-8 col-md-6 col-lg-4">
