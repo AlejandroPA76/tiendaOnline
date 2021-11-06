@@ -21,7 +21,9 @@ class CreateProductosTable extends Migration
             $table->string('imagen')->nullable();
              $table->integer('stock');
             //llave foranea categoria_id pertenece a la tabla categorias
-            $table->foreignId('categoria_id')->constrained('categorias');
+            $table->foreignId('categoria_id')
+            ->constrained('categorias')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
