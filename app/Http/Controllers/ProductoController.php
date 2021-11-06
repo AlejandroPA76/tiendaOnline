@@ -60,7 +60,14 @@ class ProductoController extends Controller
     {
         $search1=$request->get('search');
         $Productos = DB::table('productos')->where('categoria_id',$id)->where('nombre','like','%' .$search1.'%')->get();
-        return view('cliente.producto.mostrarProductos',compact('Productos','search1'));
+        if(!Auth::check()){
+            $id = 0;
+            return view('cliente.producto.mostrarProductos',compact('Productos','search1','id'));
+        }else{
+            $id = auth::user()->id;
+            return view('cliente.producto.mostrarProductos',compact('Productos','search1','id'));
+        }
+        
         
     }
 
