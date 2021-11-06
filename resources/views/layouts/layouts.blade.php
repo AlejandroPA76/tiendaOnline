@@ -58,7 +58,7 @@
                     @if(auth()->user()->rol=="supervisor")
                       <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
                       <li><a href="/productos" class="nav-item nav-link active">Productos</a></li>
-                      <li><a href="{{route('indexS')}}" class="nav-item nav-link active">home</a></li>
+                      <li><a href="/supervisor/create" class="nav-item nav-link active">Alta Usuario</a></li>
                     @endif
 
                       <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>

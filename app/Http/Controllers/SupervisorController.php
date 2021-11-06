@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class SupervisorController extends Controller
 {
@@ -49,6 +51,7 @@ class SupervisorController extends Controller
     public function create()
     {
         //
+        return view('supervisor.usuario.altaUsuario');
     }
 
     /**
@@ -60,6 +63,15 @@ class SupervisorController extends Controller
     public function store(Request $request)
     {
         //
+        $r = new User;
+        $r->name = $request->input('name');
+        $r->apellido_p = $request->input('ApellidoP');
+        $r->apellido_m = $request->input('ApellidoM');
+        $r->email = $request->input('email');
+        $r->password = Hash::make($request->input('password'));
+        $r->rol = $request->input('rol');
+        $r->save();
+        return redirect('/');
     }
 
     /**

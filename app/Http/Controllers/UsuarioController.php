@@ -17,7 +17,6 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //solo para el administrador
         $cats = Categoria::orderBy('created_at','desc')->get();
         $id = auth::user()->id;
         return view('cliente.index', compact('cats','id'));

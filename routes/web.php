@@ -61,9 +61,7 @@ return view('contador.index');
 
 //////////////todo lo que tenga que ver con el usuario
 Route::post('/usuario',[AutenticarUser::class,'validar'])->name('autenticar.usuario');
-
 Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
-
 Route::get('usuario/{id}/updatePassword',[AutenticarUser::class,'updatePassword'])->name('updatePassword');
 Route::put('usuario/{id}/update',[AutenticarUser::class,'update'])->name('update');
 ////////////////////////////////////
@@ -79,5 +77,5 @@ Route::get('/supervisor',[SupervisorController::class,'index'])->name('superviso
 Route::resource('categorias',CategoriaController::class);
 Route::resource('productos',ProductoController::class);
 Route::resource('usuarios',UsuarioController::class);
-
+Route::resource('supervisor',SupervisorController::class);
 ////con esto veo el id de la categoria que se va a presionar
