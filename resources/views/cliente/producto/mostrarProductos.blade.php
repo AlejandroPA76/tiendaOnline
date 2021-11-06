@@ -5,8 +5,7 @@
 @section('contenido')
   <div class="container">
   @section('buscar')
-    <input type="text" class="form-control" placeholder="Buscar" name="search">
-                        <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+    <input type="text" class="form-control" placeholder="Buscar" name="search" value="{{$search1}}">
 
   @endsection
 

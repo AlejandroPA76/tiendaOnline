@@ -56,19 +56,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-       
-        $Productos = DB::table('productos')->where('categoria_id',$id)->get();
-        if(!Auth::check()){
-            $id = 0;
-            return view('cliente.producto.mostrarProductos',compact('Productos','id'));
-        }else{
-            $id = auth::user()->id;
-            return view('cliente.producto.mostrarProductos',compact('Productos','id'));
-        }
-        
-        
+        $search1=$request->get('search');
+        $Productos = DB::table('productos')->where('categoria_id',$id)->where('nombre','like','%' .$search1.'%')->get();
+        return view('cliente.producto.mostrarProductos',compact('Productos','search1'));
         
     }
 
