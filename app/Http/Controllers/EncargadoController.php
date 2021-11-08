@@ -35,8 +35,28 @@ class EncargadoController extends Controller
 
     public function listarProducto($id){
         //$prods = DB::table('productos')->where('categoria_id',$id)->get();
-        $prods = DB::table('productos')->where('categoria_id',$id)->get();
+        $prods = DB::table('productos')->where('categoria_id',$id)->where('consignar','pendiente')->get();
         return view('encargado.productos.listarProductos',compact('prods'));
 
+    }
+
+    public function decisionProducto($id){
+         $sl = Producto::find($id);
+        return view('encargado.productos.autorizar',compact('sl'));
+    }
+
+    public function aceptarProducto(Request $request,$id){
+        $sl = Producto::find($id);
+        $sl->consignar=$request->input('consignar');
+        $sl->porcentaje=$request->input('porcentaje');
+        $sl->save();
+        return redirect()->route('listar.categoria.autorizar');
+    }
+    public function rechazarProducto(Request $request,$id){
+        $sl = Producto::find($id);
+        $sl->consignar=$request->input('consignar');
+        $sl->motivo=$request->input('motivo');
+        $sl->save();
+        return redirect()->route('listar.categoria.autorizar');
     }
 }

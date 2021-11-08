@@ -3,9 +3,14 @@
 @section('title')
 
 @section('contenido')
-<div class="card-body">
-  
-<table class="table">
+
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-11">
+            <div class="card">
+                <div class="card-body">
+
+            <table class="table">
                           <thead>
                             <tr>
             
@@ -43,7 +48,8 @@
                                     {{$prod->categoria_id}}
                                 </td>
                                 <td>
-        <a href="/productos/{{$prod->id}}/edit" class="btn btn-info btn-sm">Ver</a>
+        <a href="{{route('autorizar.producto',$prod->id)}}" class="btn btn-info btn-sm">Ver</a>
+        
                                  </td>
                                 
                             </tr>
@@ -51,5 +57,13 @@
                           </tbody>
                         </table>
  </div>
-
+                
+                  
+                  
+               
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
+
