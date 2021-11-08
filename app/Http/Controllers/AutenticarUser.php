@@ -28,6 +28,12 @@ class AutenticarUser extends Controller
         return redirect('/usuarios');
         
     }
+
+    if(Auth::attempt($credenciales) && auth::user()->rol=="encargado"){
+        $cats = Categoria::orderBy('created_at','desc')->get();
+        return view('encargado.index');
+        
+    }
     return 'datos erroneos';
     
     }

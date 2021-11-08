@@ -1,4 +1,4 @@
-Bienvenido contador
+Bienvenido encargado
 <!DOCTYPE html>
 <html>
 <head>
