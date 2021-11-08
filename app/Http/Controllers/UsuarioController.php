@@ -78,7 +78,6 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
         
         if($id != auth::user()->id){
             return redirect('usuarios/'.auth::user()->id.'/edit');

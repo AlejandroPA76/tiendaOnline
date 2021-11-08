@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Producto;
+use App\Models\Categoria;
 
 class EncargadoController extends Controller
 {
@@ -17,7 +19,9 @@ class EncargadoController extends Controller
     }
     public function index()
     {
-        return view('encargado.index');
+        $cats = Categoria::get();
+        //return view('supervisor.crudCategoria',compact('cats'));
+        return view('encargado.index',$cats);
     }
 
     /**
@@ -49,7 +53,8 @@ class EncargadoController extends Controller
      */
     public function show($id)
     {
-        //
+
+        
     }
 
     /**
@@ -84,5 +89,11 @@ class EncargadoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function autorizar(){
+        $pds = Producto::consignar()->get();
+  
+        return view('encargado.productos.pendienteAutorizar',compact('pds'));
     }
 }

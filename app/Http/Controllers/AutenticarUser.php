@@ -30,8 +30,12 @@ class AutenticarUser extends Controller
     }
 
     if(Auth::attempt($credenciales) && auth::user()->rol=="encargado"){
-        $cats = Categoria::orderBy('created_at','desc')->get();
+        
         return view('encargado.index');
+        
+    }
+     if(Auth::attempt($credenciales) && auth::user()->rol=="vendedor"){
+        return view('vendedor.index');
         
     }
     return 'datos erroneos';

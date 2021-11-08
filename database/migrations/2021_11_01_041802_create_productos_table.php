@@ -20,6 +20,9 @@ class CreateProductosTable extends Migration
             $table->double('precio',8,2);
             $table->string('imagen')->nullable();
              $table->integer('stock');
+             $table->string('consignar')->nullable();
+             $table->integer('porcentaje')->nullable();
+             $table->string('motivo')->nullable();
             //llave foranea categoria_id pertenece a la tabla categorias
             $table->foreignId('categoria_id')
             ->constrained('categorias')

@@ -81,7 +81,7 @@ class ProductoController extends Controller
     {
         $sl = Producto::find($id);
         $cts = Categoria::all();
-        return view('CRUD_producto.editarP',compact('sl','cts'));
+        return view('supervisor.producto.editarProduct',compact('sl','cts'));
     }
 
     /**
@@ -94,10 +94,10 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $nus = Producto::find($id);
-        $nus->namep = $request->input('name');
-        $nus->price = $request->input('price');
-        $nus->description = $request->input('description');
-        $nus->categoria_id = $request->input('ct');
+        $nus->nombre = $request->input('nombre');
+        $nus->descripcion = $request->input('descripcion');
+        $nus->precio = $request->input('precio');
+        $nus->stock = $request->input('stock');
         $nus->save();
 
         return redirect('productos');
@@ -115,5 +115,7 @@ class ProductoController extends Controller
         $nus->delete();
         return redirect('productos');
     }
+
+    
 
 }

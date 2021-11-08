@@ -14,4 +14,8 @@ class Producto extends Model
     public function categoria(){
         return $this->belongsTo('App\Models\categoria');
     }
+
+    public function scopeConsignar($query){
+        return $query->where('consignar','pendiente');
+    }
 }
