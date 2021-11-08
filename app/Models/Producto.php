@@ -18,4 +18,6 @@ class Producto extends Model
     public function scopeConsignar($query){
         return $query->where('consignar','pendiente');
     }
+
+    
 }

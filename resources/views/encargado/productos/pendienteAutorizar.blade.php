@@ -8,58 +8,21 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-header">
-                    <a class="btn btn-primary" href='/productos/create'>Agregar Producto</a>
+                        <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Selecciona la categoria</a>
+                        <div class="dropdown-menu">
+                            @foreach($cts as $ct)
+                            <a href="{{route('listar.producto.autorizar',$ct->id)}}" class="dropdown-item">{{$ct->nombre}}</a>
+                            @endforeach
+                        </div>
+                    </div>
                     
                 </div>
 
-                <div class="card-body">
+                
                   
-                    <table class="table">
-                          <thead>
-                            <tr>
-            
-                              <th >Nombre</th>
-                              <th >Descripcion</th>
-                              <th >Precio</th>
-                              <th>consignar</th>
-                              <th>categoria</th>
-                              <th >Accion</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            @foreach($pds as $pd)
-                            <tr>
-
-                                <td>
-                                    {{$pd->nombre}}
-                                </td>
-
-                                  <td>
-                                    {{$pd->descripcion}}
-                                  </td>
-
-                                  <td>
-                                    {{$pd->precio}}
-                                  </td>
-
-                        
-                                <td>
-                                    
-                                    {{$pd->consignar}}
-                                </td>
-                                <td>
-                                    
-                                    {{$pd->categoria_id}}
-                                </td>
-                                <td>
-        <a href="/productos/{{$pd->id}}/edit" class="btn btn-info btn-sm">Ver</a>
-                                 </td>
-                                
-                            </tr>
-                            @endforeach
-                          </tbody>
-                        </table>
-                </div>
+                    @yield('productos')
+               
             </div>
         </div>
     </div>

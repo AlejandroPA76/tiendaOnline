@@ -68,7 +68,7 @@
                     @if(auth()->user()->rol=="encargado")
                       <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
                      
-                      <li><a href="{{route('listar.producto.autorizar')}}" class="nav-item nav-link active">Autorizar productos</a></li>
+                      <li><a href="{{route('listar.categoria.autorizar')}}" class="nav-item nav-link active">Autorizar productos</a></li>
                 
                     @endif
 

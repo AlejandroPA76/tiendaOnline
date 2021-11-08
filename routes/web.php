@@ -80,7 +80,7 @@ Route::resource('supervisor',SupervisorController::class);
 ////con esto veo el id de la categoria que se va a presionar
 
 ///ruta autorizar producto
-Route::get('/encargado/autorizacion-listado',[EncargadoController::class,'autorizar'])->name('listar.producto.autorizar');
+Route::get('/encargado/autorizacion-listado',[EncargadoController::class,'Menucats'])->name('listar.categoria.autorizar');
 //ver y autorizar el producto en especifico
-Route::get('/encargado/autorizacion-en-proceso',[EncargadoController::class,'autorizar'])->name('ver.producto.autorizar');
 
+Route::get('encargado/listar-producto-categoria/{id}',[EncargadoController::class,'listarProducto'])->name('listar.producto.autorizar');
