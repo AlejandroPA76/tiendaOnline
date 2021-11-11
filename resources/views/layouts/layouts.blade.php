@@ -62,19 +62,17 @@
                     @if(auth()->user()->rol=="supervisor")
                       <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
                       <li><a href="/productos" class="nav-item nav-link active">Productos</a></li>
-                      <li><a href="/supervisor/create" class="nav-item nav-link active">Alta Usuario</a></li>
+                      <li><a href="/supervisor" class="nav-item nav-link active">Usuarios</a></li>
                     @endif
 
                     @if(auth()->user()->rol=="encargado")
                       <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
-                     
                       <li><a href="{{route('listar.categoria.autorizar')}}" class="nav-item nav-link active">Autorizar productos</a></li>
                 
                     @endif
 
                     @if(auth()->user()->rol=="vendedor")
                        <li><a href="/productos" class="nav-item nav-link active">Vender producto</a></li>
-
                        <li><a href="/productos" class="nav-item nav-link active">Productos en venta</a></li>
                 
                     @endif

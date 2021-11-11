@@ -84,9 +84,6 @@ Route::get('/encargado/autorizacion-listado',[EncargadoController::class,'Menuca
 //ver y autorizar el producto en especifico
 
 Route::get('encargado/listar-producto-categoria/{id}',[EncargadoController::class,'listarProducto'])->name('listar.producto.autorizar');
-
 Route::get('encargado/visualizar-producto/{id}',[EncargadoController::class,'decisionProducto'])->name('autorizar.producto');
-
 Route::put('encargado/autorizar-producto/{id}',[EncargadoController::class,'aceptarProducto'])->name('aceptar.producto');
-
 Route::put('encargado/rechazar-producto/{id}',[EncargadoController::class,'rechazarProducto'])->name('rechazar.producto');

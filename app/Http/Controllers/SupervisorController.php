@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class SupervisorController extends Controller
 {
@@ -40,7 +41,8 @@ class SupervisorController extends Controller
 
     public function index()
     {
-        return view('encargado.index');
+        $usrs = User::all();
+        return view('supervisor.usuario.index',compact('usrs'));
     }
 
     /**
@@ -82,7 +84,9 @@ class SupervisorController extends Controller
      */
     public function show($id)
     {
-        //
+        $us = User::find($id);
+        $id = $us->id;
+        return view('supervisor.usuario.indexEdit',compact('us','id'));
     }
 
     /**
@@ -93,7 +97,9 @@ class SupervisorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sl = User::find($id);
+        $id = $sl->id;
+        return view('supervisor.usuario.infoEditar',compact('sl','id'));   
     }
 
     /**
@@ -106,6 +112,14 @@ class SupervisorController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $us = User::find($id);
+        $us->name = $request->input('name');
+        $us->apellido_p = $request->input('ApellidoP');
+        $us->apellido_m = $request->input('ApellidoM');
+        $us->email = $request->input('email');
+        $us->save();
+        
+        return redirect('supervisor/'.$id);
     }
 
     /**
