@@ -10,6 +10,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ContadorController;
 use App\Http\Controllers\EncargadoController;
 use App\Http\Controllers\SupervisorController;
+use App\Http\Controllers\AccionesController;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -61,6 +62,8 @@ Route::post('/usuario',[AutenticarUser::class,'validar'])->name('autenticar.usua
 Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
 Route::get('usuario/{id}/updatePassword',[AutenticarUser::class,'updatePassword'])->name('updatePassword');
 Route::put('usuario/{id}/update',[AutenticarUser::class,'update'])->name('update');
+
+Route::get('Showproducto/{id}',[AccionesController::class,'showProducto']);
 ////////////////////////////////////
 
 ///menu respectivo de cada rol

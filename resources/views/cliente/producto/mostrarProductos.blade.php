@@ -19,7 +19,7 @@
         <div class="card-body">
           <h4 class="card-title">{{$pro->nombre}}</h4>
           <p class="card-text">{{$pro->descripcion}}</p>
-          <a href="#" class="card-link">entrar</a>
+          <a href="/Showproducto/{{$pro->id}}" class="card-link">entrar</a>
      
         </div>
         

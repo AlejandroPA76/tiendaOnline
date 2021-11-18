@@ -115,7 +115,6 @@ class ProductoController extends Controller
         $nus->delete();
         return redirect('productos');
     }
-
     
 
 }
