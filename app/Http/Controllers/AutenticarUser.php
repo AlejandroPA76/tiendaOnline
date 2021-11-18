@@ -56,7 +56,7 @@ class AutenticarUser extends Controller
         $us = User::find($id);
         $us->password = Hash::make($request->input('password'));
         $us->save();
-        return redirect('usuarios/'.$id);
+        return redirect('/');
     }
 
     public function logout(){
