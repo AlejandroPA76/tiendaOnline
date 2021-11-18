@@ -47,7 +47,7 @@
                    
                   @auth
                   <a href="/usuarios" class="navbar-brand">Bienvenido
-                   {{auth()->user()->rol}} 
+                   {{auth()->user()->name}} 
                 </a>
                 
                
