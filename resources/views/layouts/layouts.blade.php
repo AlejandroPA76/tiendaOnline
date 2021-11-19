@@ -61,7 +61,6 @@
 
                     @if(auth()->user()->rol=="supervisor")
                       <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
-                      <li><a href="/productos" class="nav-item nav-link active">Productos</a></li>
                       <li><a href="/supervisor" class="nav-item nav-link active">Usuarios</a></li>
                     @endif
 
