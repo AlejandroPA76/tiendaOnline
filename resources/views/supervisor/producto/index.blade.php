@@ -3,6 +3,7 @@
 @section('title')
 
 @section('contenido')
+{{--index de vendedor--}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-11">
@@ -24,6 +25,8 @@
                               <th>stock</th>
                               <th>imagen</th>
                               <th>categoria</th>
+                              <th>status</th>
+                              <th>motivo</th>
                               <th >Accion</th>
                             </tr>
                           </thead>
@@ -55,6 +58,14 @@
                                     
                                     {{$pd->categoria_id}}
                                 </td>
+                                <td>
+                                    
+                                    {{$pd->consignar}}
+                                </td>
+                                <td>
+                                    {{$pd->motivo}}
+                                </td>
+
                                 <td>
         <a href="/productos/{{$pd->id}}/edit" class="btn btn-info btn-sm">Editar</a>
                                  </td>

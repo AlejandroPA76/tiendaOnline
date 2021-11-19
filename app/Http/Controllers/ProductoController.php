@@ -1,5 +1,5 @@
 <?php
-
+//menu vendor index
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -14,8 +14,13 @@ class ProductoController extends Controller
 {
    public function index(Request $request)
     {
-        $pds = Producto::all();
+        //obtengo el id del usuario y por medio de este muestro sus productos que tiene a la venta
+        $usuario=auth()->user()->id;
+        //$pds = Producto::all();
+        $pds = DB::table('productos')->where('propietario',$usuario)->get();
         return view('supervisor.producto.index',compact('pds'));
+
+        
 
     }
     /**
@@ -44,6 +49,7 @@ class ProductoController extends Controller
         $nus->imagen =$request->input('imagen');
         $nus->stock =$request->input('stock');
         $nus->consignar = $request->input('consignar');
+        $nus->propietario = $request->input('propietario');
         $nus->categoria_id = $request->input('ct');
         
         $nus->save();

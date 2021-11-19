@@ -3,12 +3,13 @@
 @section('title')
 
 @section('contenido')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
         {{--se tiene que colocar un enctype porque vamos a colocar una imagen--}}
         {{--enctype="multipart/form-data"--}}
-<form action="/productos" method="POST" >
+<form action="/productos" method="POST" enctype="multipart/form-data">
   @csrf
 
   <div class="form-group">
@@ -38,17 +39,30 @@
     <input type="number" class="form-control" name="stock">
   </div>
 
+  <div class="form-group">
+    <input type="hidden" class="form-control" name="propietario" value="{{
+    auth()->user()->id}}">
+  </div>
+
+
    <div class="form-group">
     <input type="hidden" class="form-control" name="consignar" value="pendiente">
   </div>
 
-  <select name="ct">
+  <div class="form-group">
+     <input type="file" class="custom-file-input" multiple name="foto[]">
+  </div>
+
+
+  <div class="form-group">
+    <select name="ct">
                 <option value="name">Seleccionar Categoria</option>
                 @foreach ($cts as $ct)
                 <option value="{{$ct['id']}}">{{ $ct['nombre'] }}</option>
                 @endforeach
   </select>
-
+  </div>
+  <br>
 
   <button class="btn btn-primary" type="submit">Agregar</button>
   <a href="{{ url()->previous() }}" class="btn btn-danger" class="btn btn-danger">Cancelar</a>
