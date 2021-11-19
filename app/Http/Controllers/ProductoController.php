@@ -43,6 +43,7 @@ class ProductoController extends Controller
         $nus->precio = $request->input('precio');
         $nus->imagen =$request->input('imagen');
         $nus->stock =$request->input('stock');
+        $nus->consignar = $request->input('consignar');
         $nus->categoria_id = $request->input('ct');
         
         $nus->save();
@@ -59,7 +60,7 @@ class ProductoController extends Controller
     public function show(Request $request,$id)
     {
         $search1=$request->get('search');
-        $Productos = DB::table('productos')->where('categoria_id',$id)->where('nombre','like','%' .$search1.'%')->get();
+        $Productos = DB::table('productos')->where('categoria_id',$id)->where('consignar','aceptado')->where('nombre','like','%' .$search1.'%')->get();
         if(!Auth::check()){
             $id = 0;
             return view('cliente.producto.mostrarProductos',compact('Productos','search1','id'));

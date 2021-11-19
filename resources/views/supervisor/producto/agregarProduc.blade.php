@@ -38,6 +38,10 @@
     <input type="number" class="form-control" name="stock">
   </div>
 
+   <div class="form-group">
+    <input type="hidden" class="form-control" name="consignar" value="pendiente">
+  </div>
+
   <select name="ct">
                 <option value="name">Seleccionar Categoria</option>
                 @foreach ($cts as $ct)
