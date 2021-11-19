@@ -13,4 +13,13 @@ class User extends Authenticatable
 {
     use HasFactory,notifiable;
 
+    public function comentarios(){
+        //UN USUARIO puede HACER COMENTARIOS
+    return $this->belongsTo('App\Models\comentario');
+    }
+    
+     public function pedido(){
+        //UN PRODUCTO PUEDE SER PEDIDO
+    return $this->belongsTo('App\Models\pedido');
+    }
 }

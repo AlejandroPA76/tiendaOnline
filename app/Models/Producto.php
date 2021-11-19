@@ -19,5 +19,18 @@ class Producto extends Model
         return $query->where('consignar','pendiente');
     }
 
+    public function comentario(){
+        //UN PRODUCTO PUEDE SER COMENTADO
+    return $this->belongsTo('App\Models\comentario');
+    }
+
+    public function pedido(){
+        //UN PRODUCTO PUEDE SER PEDIDO
+    return $this->belongsTo('App\Models\pedido');
+    }
     
+    public function multimedio(){
+        //UN PRODUCTO PUEDE TENER VARIAS FOTOS
+    return $this->belongsTo('App\Models\multimedio');
+    }
 }
