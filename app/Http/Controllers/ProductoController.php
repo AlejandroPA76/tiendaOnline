@@ -137,8 +137,16 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
+        //encuentro el producto con el id 
         $nus = Producto::find($id);
+        //encuentro las fotos donde el campo productos_id es el mismo con el id del producto
+        $photos = Multimedio::where('productos_id',$nus->id)->get();
+        //elimino los datos del producto
         $nus->delete();
+        //recorro todas las fotos y las elimino en cada bucle
+        foreach($photos as $photo){
+        Storage::delete('public/'.$photo->foto);
+        }
         return redirect('productos');
     }
     
