@@ -16,9 +16,12 @@ class CreateMultimediosTable extends Migration
         Schema::create('multimedios', function (Blueprint $table) {
             $table->id();
             $table->string('foto')->nullable();
-            $table->timestamps();
            // $table->foreign('productos_id')->references('id')->on('productos');
-            $table->foreignId('productos_id')->constrained('productos');
+            $table->foreignId('productos_id')
+            ->constrained('productos')
+            ->onDelete('cascade');
+            
+            $table->timestamps();
         });
     }
 

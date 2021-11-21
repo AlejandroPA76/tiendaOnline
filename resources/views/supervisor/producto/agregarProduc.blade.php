@@ -1,5 +1,5 @@
 @extends('layouts.layouts')
-
+{{--vendor formulario para agregar producto--}}
 @section('title')
 
 @section('contenido')
@@ -30,11 +30,6 @@
   </div>
 
  <div class="form-group">
-    <label for="">Imagen:</label>
-    <input type="file" name="imagen" id="uploadImage" size="30" /> 
-  </div>
-
- <div class="form-group">
     <label for="">stock</label>
     <input type="number" class="form-control" name="stock">
   </div>
@@ -50,7 +45,7 @@
   </div>
 
   <div class="form-group">
-     <input type="file" class="custom-file-input" multiple name="foto[]">
+     <input type="file" class="custom-file-input" multiple name="foto[]" multiple>
   </div>
 
 

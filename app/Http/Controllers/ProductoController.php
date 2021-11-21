@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Categoria;
+use App\Models\Multimedio;
 use DB;
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\Storage;
 
 use function PHPUnit\Framework\isNull;
 
@@ -42,7 +45,10 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        //metodo para agregar los productos
         $nus = new Producto();
+        
+
         $nus->nombre = $request->input('nombre');
         $nus->descripcion = $request->input('descripcion');
         $nus->precio = $request->input('precio');
@@ -51,10 +57,23 @@ class ProductoController extends Controller
         $nus->consignar = $request->input('consignar');
         $nus->propietario = $request->input('propietario');
         $nus->categoria_id = $request->input('ct');
-        
         $nus->save();
-
-        return redirect('productos');
+        //return redirect('productos');
+        //con la variable de abajo puedo traer el ultimo id del registro del producto
+        $ultimoregistro = Producto::latest()->first()->id;
+        //traigo las imagemenes de array y las guardo en una variable $imagenes 
+       $imagenes = $request->foto;
+       //foreach donde recorro todo el array del imagenes
+       foreach($imagenes as $imagen){
+        //variable del modelo
+       $fotos = new Multimedio();
+        //guardo la imagen en la carpeta uploads       
+        $fotos->foto=$imagen->store('uploads','public');
+        $fotos->productos_id=$ultimoregistro;
+        $fotos->save();
+       }  
+       
+       return redirect('productos');
     }
 
     /**
