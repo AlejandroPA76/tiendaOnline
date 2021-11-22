@@ -15,5 +15,6 @@ class MultimedioController extends Controller
     $photos = Multimedio::findOrFail($id);
     $photos->delete();
      Storage::delete('public/'.$photos->foto);
+    return back();
    }
 }
