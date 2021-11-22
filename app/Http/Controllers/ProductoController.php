@@ -7,6 +7,7 @@ use App\Models\Producto;
 use App\Models\Categoria;
 use App\Models\Multimedio;
 use DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Storage;
@@ -107,7 +108,9 @@ class ProductoController extends Controller
     {
         $sl = Producto::find($id);
         $cts = Categoria::all();
-        return view('supervisor.producto.editarProduct',compact('sl','cts'));
+        //agrego esto para encontrar las fotos con el mismo id de producto
+        $photos = Multimedio::where('productos_id',$sl->id)->get();
+        return view('supervisor.producto.editarProduct',compact('sl','cts','photos'));
     }
 
     /**
@@ -120,12 +123,43 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $nus = Producto::find($id);
+        $imagenes = $request->imagenUpdate; 
+        ////encuetro las imagenes y las elimino para cargar las nuevas
+        $photos = Multimedio::where('productos_id',$nus->id)->get();
+
         $nus->nombre = $request->input('nombre');
         $nus->descripcion = $request->input('descripcion');
         $nus->precio = $request->input('precio');
         $nus->stock = $request->input('stock');
         $nus->save();
+        
+        //ahora subo las nuevas imagenes 
 
+        //traigo las imagenes de array y las guardo en una variable $imagenes  
+
+       //foreach($photos as $photo){
+       //Storage::delete('public/'.$photo->foto);
+       //}
+
+       //foreach donde recorro todo el array del imagenes 
+         
+       foreach($imagenes as $imagen){ 
+       
+             //variable del modelo 
+
+        $fotos = new Multimedio(); 
+
+        //guardo la imagen en la carpeta uploads        
+
+        $fotos->foto=$imagen->store('uploads','public'); 
+
+        $fotos->productos_id=$nus->id; 
+           $fotos->save(); 
+        }
+      
+       
+         
+         
         return redirect('productos');
     }
 

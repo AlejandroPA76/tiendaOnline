@@ -11,6 +11,7 @@ use App\Http\Controllers\ContadorController;
 use App\Http\Controllers\EncargadoController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\AccionesController;
+use App\Http\Controllers\MultimedioController;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -90,3 +91,7 @@ Route::get('encargado/listar-producto-categoria/{id}',[EncargadoController::clas
 Route::get('encargado/visualizar-producto/{id}',[EncargadoController::class,'decisionProducto'])->name('autorizar.producto');
 Route::put('encargado/autorizar-producto/{id}',[EncargadoController::class,'aceptarProducto'])->name('aceptar.producto');
 Route::put('encargado/rechazar-producto/{id}',[EncargadoController::class,'rechazarProducto'])->name('rechazar.producto');
+
+//ruta donde se elimina imagenes de cada producto
+Route::delete('imagen/{id}',[MultimedioController::class,'eliminarmultimedio'])
+->name('eliminar.imagen.producto');
