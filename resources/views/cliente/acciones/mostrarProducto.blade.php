@@ -20,7 +20,10 @@
             <div class="row" id="gradient">
 
                 <div class="col-md-4">
-                    <img src="http://www.prepbootstrap.com/Content/images/shared/misc/s7e.png" class="img-responsive">
+                    {{--esta variable viene del controlador AccionesController--}}
+                    @foreach($photos as $photo)
+                      <img src="{{ asset('storage/'.$photo->foto) }}" class="img-fluid" alt="Eniun" width="100">
+                    @endforeach
                 </div>
                
             </div>
@@ -30,6 +33,7 @@
                         <table class="table">
                             <tbody>
                                 <tr>
+                                    {{--variable $sl viene de AccionesController--}}
                                     <td class="success">Nombre: </td>
                                     <td>{{$sl->nombre}}</td>
                                 </tr>
