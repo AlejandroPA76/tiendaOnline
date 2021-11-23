@@ -22,4 +22,7 @@ class User extends Authenticatable
         //UN PRODUCTO PUEDE SER PEDIDO
     return $this->belongsTo('App\Models\pedido');
     }
+    public function respuestas(){
+        return $this->belongsTo('App\Models\Respuesta');
+    }
 }
