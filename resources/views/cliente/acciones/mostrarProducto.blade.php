@@ -72,7 +72,7 @@
                 @endguest    
                 @auth
                 <div>
-                    <h4>Pregunta al Vendedor</h4>
+                    <h4>Pregunta sobre el Producto</h4>
                 </div>
                 <form action="{{route('addComentary')}}" method="POST">
 
@@ -101,7 +101,7 @@
                 <div class="col-6">
                   <div class="comment">
                     <div>
-                        <h4>Comentarios</h4>
+                        <h4>Preguntas</h4>
                     </div>
                     <div>
                         @foreach ($cs as $c)
