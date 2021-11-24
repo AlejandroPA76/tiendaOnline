@@ -99,4 +99,6 @@ Route::delete('imagen/{id}',[MultimedioController::class,'eliminarmultimedio'])
 //rutas de las acciones de los clientes
 Route::post('/addComentary',[AccionesController::class,'addCommentary'])->name('addComentary');
 Route::delete('/deleteCommentary/{id}',[AccionesController::class,'deleteCommentary'])->name('deleteCommentary'); 
+Route::post('/addResponse/{id}',[AccionesController::class,'addResponse'])->name('addResponse');
+Route::delete('/deleteResponse/{id}',[AccionesController::class,'deleteResponse'])->name('deleteResponse'); 
 Route::get('Showproducto/{id}',[AccionesController::class,'showProducto']);

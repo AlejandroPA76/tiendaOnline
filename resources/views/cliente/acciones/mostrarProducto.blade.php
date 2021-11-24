@@ -121,8 +121,44 @@
                                                 <input type="submit" class="btn btn-danger btn-sm" value="Eliminar" onclick="return confirm('deseas borrar su Comentario?')">
                                             </form>
                                             @endif
-                                                <a href="#">Responder</a>
+                                                    <form action="/addResponse/{{$c['id']}}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" class="form-control"  name="id_user" value="{{$id}}">
+                                                        <input type="hidden" class="form-control"  name="id_comentary" value="{{$c['id']}}">
+                                                        <input type="hidden" class="form-control"  name="id_producto" value="{{$sl->id}}">
+                                                        <textarea type="text" class="input" placeholder="Escribe una Respuesta" v-model="newItem" name="Respuesta"></textarea>
+                                                        <button  class='primaryContained float-right' type="submit">Enviar</button>
+                                                    </form>
                                         @endauth
+                                    <h4>Respuestas</h4>
+                                        @foreach ($rs as $r)
+                                        @if ($c['id'] == $r['comentarios_id'])  
+                                        <div class="dialogbox">
+                                            <div class="body">
+                                              <span class="tip tip-up"></span>
+                                              <div class="message">
+                                                <h5>{{$r['name']}}: {{$r['created_at']}}</h5>
+                                                <p>{{$r['respuesta']}}</p>
+                                                @auth
+                                                @if ($r['user_id'] == Auth::user()->id)
+                                                <form action="/deleteResponse/{{$r['id']}}" method="POST">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <input type="hidden" class="form-control"  name="id_producto" value="{{$sl->id}}">
+                                                    <input type="submit" class="btn btn-danger btn-sm" value="Eliminar" onclick="return confirm('deseas borrar su Comentario?')">
+                                                </form>
+                                                @endif
+
+                                                @endauth
+
+                                              </div>
+                                            </div>
+                                        </div>
+                                        @endif
+                                        @endforeach
+                                            
+                                          
+                                        
                                 </div>
                               </div>
                             </div>
@@ -146,7 +182,29 @@
     });
 </script>
 
+<script languague="javascript">
+    function mostrar() {
+        div = document.getElementById('Commentary-response');
+        a = document.getElementById('response');
+        a1 = document.getElementById('ocultar');
+        div.style.display = '';
+        a.style.display = 'none';
+        a1.style.display = 'block';
+    }
+
+    function cerrar() {
+        div = document.getElementById('Commentary-response');
+        a = document.getElementById('response');
+        a1 = document.getElementById('ocultar');
+
+        a.style.display = 'block';
+        a1.style.display = 'none';
+        div.style.display = 'none';
+    }
+</script>
+
 <style>
+    
     .container-commentary {
 	max-width: 800px;
 	margin: 30px auto;
@@ -169,7 +227,7 @@
 	border: none;
 	background: #E8E8E8;
 	padding: 5px 10px;
-	height: 50%;
+	height: 80px;
 	border-radius: 5px 5px 0px 0px;
 	border-bottom: 2px solid #016BA8;
 	transition: all 0.5s;
@@ -289,6 +347,8 @@
   line-height: 1.5;
   color: #797979;
 }
+
+
 </style>
             
 @endsection
