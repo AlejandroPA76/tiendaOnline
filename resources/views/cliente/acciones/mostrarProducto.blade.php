@@ -65,22 +65,26 @@
             <div class="container-commentary">
               <div class="row">
                 <div class="col-6">
-                  <div class="comment">
-                <p v-for="items in item" v-text="items"></p>
-                  </div><!--End Comment-->
-                  </div><!--End col -->
-                  </div><!-- End row -->
-              <div class="row">
-                <div class="col-6">
+                @guest
+                <div>
+                    <h4>Registrate para Hacer Preguntas</h4>
+                </div>   
+                @endguest    
                 @auth
                 <div>
                     <h4>Pregunta al Vendedor</h4>
                 </div>
-                <form action="">
-                  <textarea type="text" class="input" placeholder="Escribe tu Pregunta" v-model="newItem" ></textarea>
-                  <button  class='primaryContained float-right' type="submit">Enviar</button>
+                <form action="{{route('addComentary')}}" method="POST">
+
+                    @csrf
+                    <input type="hidden" class="form-control"  name="id_user" value="{{$id}}">
+                    <input type="hidden" class="form-control"  name="id_producto" value="{{$sl->id}}">
+                    <textarea type="text" class="input" placeholder="Escribe tu Pregunta" v-model="newItem" name="Comentario"></textarea>
+                    <button  class='primaryContained float-right' type="submit">Enviar</button>
+                    
+
                 </form>
-                  @endauth 
+                @endauth 
 
                 </div><!-- End col -->
               </div><!--End Row -->
@@ -91,9 +95,45 @@
 
 <div class="container">
     <div class="row">
-        <h4>
-            Comentarios    
-        </h4>    
+        <section id="app">
+            <div class="container-commentary">
+              <div class="row">
+                <div class="col-6">
+                  <div class="comment">
+                    <div>
+                        <h4>Comentarios</h4>
+                    </div>
+                    <div>
+                        @foreach ($cs as $c)
+                        <div class="container">
+                            <div class="dialogbox">
+                              <div class="body">
+                                <span class="tip tip-up"></span>
+                                <div class="message">
+                                        <h5>{{$c['name']}}: {{$c['created_at']}}</h5>
+                                        <p>{{$c['comentario']}}</p>
+                                        @auth
+                                            @if ($c['user_id'] == Auth::user()->id)
+                                            <form action="/deleteCommentary/{{$c['id']}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="hidden" class="form-control"  name="id_producto" value="{{$sl->id}}">
+                                                <input type="submit" class="btn btn-danger btn-sm" value="Eliminar" onclick="return confirm('deseas borrar su Comentario?')">
+                                            </form>
+                                            @endif
+                                                <a href="#">Responder</a>
+                                        @endauth
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                  </div><!--End Comment-->
+                </div><!--End col -->
+            </div><!-- End row -->
+            </div><!--End Container -->
+          </section><!-- end App -->       
     </div>
 </div>    
 
@@ -190,6 +230,65 @@
     .pb-product-details-fa > span {
         padding-top: 20px;
     }
+    .tip {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  background: transparent;
+  border: 10px solid #ccc;
+}
+
+.tip-up {
+  top: -25px; /* Same as body margin top + border */
+  left: 10px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+.tip-down {
+  bottom: -25px;
+  left: 10px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;  
+}
+
+.tip-left {
+  top: 10px;
+  left: -25px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;  
+}
+
+.tip-right {
+  top: 10px;
+  right: -25px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;  
+}
+
+.dialogbox .body {
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  margin: 20px 10px;
+  padding: 5px;
+  background-color: #DADADA;
+  border-radius: 3px;
+  border: 5px solid #ccc;
+}
+
+.body .message {
+  min-height: 30px;
+  border-radius: 3px;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #797979;
+}
 </style>
             
 @endsection

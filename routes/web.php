@@ -64,7 +64,7 @@ Route::get('logout',[AutenticarUser::class,'logout'])->name('cerrar.usuario');
 Route::get('usuario/{id}/updatePassword',[AutenticarUser::class,'updatePassword'])->name('updatePassword');
 Route::put('usuario/{id}/update',[AutenticarUser::class,'update'])->name('update');
 
-Route::get('Showproducto/{id}',[AccionesController::class,'showProducto']);
+
 ////////////////////////////////////
 
 ///menu respectivo de cada rol
@@ -95,3 +95,8 @@ Route::put('encargado/rechazar-producto/{id}',[EncargadoController::class,'recha
 //ruta donde se elimina imagenes de cada producto
 Route::delete('imagen/{id}',[MultimedioController::class,'eliminarmultimedio'])
 ->name('eliminar.imagen.producto');
+
+//rutas de las acciones de los clientes
+Route::post('/addComentary',[AccionesController::class,'addCommentary'])->name('addComentary');
+Route::delete('/deleteCommentary/{id}',[AccionesController::class,'deleteCommentary'])->name('deleteCommentary'); 
+Route::get('Showproducto/{id}',[AccionesController::class,'showProducto']);
