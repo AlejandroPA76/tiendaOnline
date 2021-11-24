@@ -17,4 +17,9 @@ class Comentario extends Model
         //MUCHOS COMENTARIOS PUEDEN SER REALIZADOS A UN PRODUCTO
         return $this->hasMany('App\Models\Producto');
     }
+
+    public function respuestas(){
+        //MUCHAS RESPUESTAS PUEDEN SER HACIA UN COMENTARIO
+        return $this->belongsTo('App\Models\Respuestas');
+    }
 }
