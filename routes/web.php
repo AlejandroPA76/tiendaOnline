@@ -102,3 +102,6 @@ Route::delete('/deleteCommentary/{id}',[AccionesController::class,'deleteComment
 Route::post('/addResponse/{id}',[AccionesController::class,'addResponse'])->name('addResponse');
 Route::delete('/deleteResponse/{id}',[AccionesController::class,'deleteResponse'])->name('deleteResponse'); 
 Route::get('Showproducto/{id}',[AccionesController::class,'showProducto']);
+
+////
+Route::put('cliente/contrato{id}',[AccionesController::class,'clienteVendedor'])->name('contratoVendedor');

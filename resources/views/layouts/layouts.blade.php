@@ -56,8 +56,39 @@
                   </button>                 
                     @if(auth()->user()->rol=="cliente")
                       <li><a href="/usuarios/{{$id}}" class="nav-item nav-link active">Mi Perfil</a></li>
-                      <li><a href="#" class="nav-item nav-link active">carrito</a></li>
+                      <li><a href="#" class="nav-item nav-link active">Carrito</a></li>
+<!-- Button trigger modal -->
+
+<li><a href="" class="nav-item nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal">Convertirme en vendedor</a></li>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">AVISO!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Al convertirte en vendedor podras poner a la ventas tus productos y ganar muchos beneficios!
+      </div>
+      <div class="modal-footer">
+        <form action="{{route('contratoVendedor',$id)}}" method="POST">
+            @csrf
+            @method('put')
+            <input type="hidden" name="rol" value="vendedor">
+            <button type="submit" class="btn btn-primary">Convertirme en vendedor</button>
+        </form>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
                     @endif
+
+
 
                     @if(auth()->user()->rol=="supervisor")
                       <li><a href='/categorias' class="nav-item nav-link active">Categorias</a></li>
@@ -71,9 +102,12 @@
                     @endif
 
                     @if(auth()->user()->rol=="vendedor")
-                       <li><a href="/productos" class="nav-item nav-link active">Vender producto</a></li>
+                        
+                        {{--
+                        <li><a href="/usuarios/{{$id}}" class="nav-item nav-link active">Mi Perfil</a></li> 
+                        --}}
                        <li><a href="/productos" class="nav-item nav-link active">Productos en venta</a></li>
-                
+                        <li><a href="#" class="nav-item nav-link active">carrito</a></li>
                     @endif
 
                       <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>

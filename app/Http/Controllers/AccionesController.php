@@ -6,6 +6,7 @@ use App\Models\Comentario;
 use App\Models\Producto;
 use App\Models\Multimedio;
 use App\Models\Respuesta;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -83,6 +84,13 @@ class AccionesController extends Controller
         $rs = Respuesta::find($id);
         $rs->delete();
         return redirect('Showproducto/'.$request->id_producto);
+    }
+
+    //con esta funcion convierto al cliente a vendedor
+    public function clienteVendedor(Request $request, $id){
+        $us = User::find($id);
+        $us->rol = $request->input('rol');
+        $us->save();
     }
 
 }

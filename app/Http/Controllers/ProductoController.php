@@ -53,18 +53,20 @@ class ProductoController extends Controller
         $nus->nombre = $request->input('nombre');
         $nus->descripcion = $request->input('descripcion');
         $nus->precio = $request->input('precio');
-        $nus->imagen =$request->input('imagen');
         $nus->stock =$request->input('stock');
         $nus->consignar = $request->input('consignar');
         $nus->propietario = $request->input('propietario');
         $nus->categoria_id = $request->input('ct');
         $nus->save();
         //return redirect('productos');
+       if ($request->hasfile('foto')) {
         //con la variable de abajo puedo traer el ultimo id del registro del producto
         $ultimoregistro = Producto::latest()->first()->id;
+
         //traigo las imagemenes de array y las guardo en una variable $imagenes 
        $imagenes = $request->foto;
        //foreach donde recorro todo el array del imagenes
+
        foreach($imagenes as $imagen){
         //variable del modelo
        $fotos = new Multimedio();
@@ -73,7 +75,7 @@ class ProductoController extends Controller
         $fotos->productos_id=$ultimoregistro;
         $fotos->save();
        }  
-       
+       }
        return redirect('productos');
     }
 
@@ -145,8 +147,8 @@ class ProductoController extends Controller
        //}
 
        //foreach donde recorro todo el array del imagenes 
-         
-       foreach($imagenes as $imagen){ 
+         if ($request->hasfile('imagenUpdate')) {
+            foreach($imagenes as $imagen){ 
        
              //variable del modelo 
 
@@ -159,7 +161,9 @@ class ProductoController extends Controller
         $fotos->productos_id=$nus->id; 
            $fotos->save(); 
         }
-      
+       
+         }
+       
        
          
          

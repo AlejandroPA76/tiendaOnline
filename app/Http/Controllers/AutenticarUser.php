@@ -38,6 +38,7 @@ class AutenticarUser extends Controller
         return view('vendedor.index');
         
     }
+    
     return 'datos erroneos';
     
     }
