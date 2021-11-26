@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Categoria;
 use DB;
@@ -28,8 +30,9 @@ class EncargadoController extends Controller
 
     public function Menucats(){
         //$pds = Producto::consignar()->get();
-        $cts = Categoria::all();    
-        return view('encargado.productos.pendienteAutorizar',compact('cts'));
+        $cts = Categoria::all();
+        $id = auth::user()->id;   
+        return view('encargado.productos.pendienteAutorizar',compact('cts','id'));
 
        
     }
@@ -37,6 +40,7 @@ class EncargadoController extends Controller
     public function listarProducto($id){
         //$prods = DB::table('productos')->where('categoria_id',$id)->get();
         $prods = DB::table('productos')->where('categoria_id',$id)->where('consignar','pendiente')->get();
+        
         return view('encargado.productos.listarProductos',compact('prods'));
 
     }
@@ -106,9 +110,12 @@ class EncargadoController extends Controller
      */
     public function show($id)
     {
+
         $us = User::find($id);
         $id = $us->id;
+
         return view('encargado.usuario.indexEdit',compact('us','id'));
+    
     }
 
     /**
@@ -141,7 +148,7 @@ class EncargadoController extends Controller
         $us->email = $request->input('email');
         $us->save();
         
-        return redirect('encargado/'.$id);
+        return redirect('encargados/'.$id);
     }
 
     /**

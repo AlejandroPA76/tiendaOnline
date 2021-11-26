@@ -8,7 +8,7 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-header">
-                    <a class="btn btn-primary" href='/encargado/create'>Alta a un Usuario</a>
+                    <a class="btn btn-primary" href='/encargados/create'>Alta a un Usuario</a>
                     
                 </div>
 
@@ -44,7 +44,7 @@
                                     {{$us->email}}
                                 </td>
                                 <td>
-        <a href="/encargado/{{$us->id}}" class="btn btn-info btn-sm">Editar</a>
+        <a href="/encargados/{{$us->id}}" class="btn btn-info btn-sm">Editar</a>
                                  </td>
                                  <td>
          <form action="#" method="POST">

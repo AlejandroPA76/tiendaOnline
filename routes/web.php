@@ -80,7 +80,7 @@ Route::resource('categorias',CategoriaController::class);
 //////
 Route::resource('productos',ProductoController::class);
 Route::resource('usuarios',UsuarioController::class);
-Route::resource('encargado',EncargadoController::class);
+Route::resource('encargados',EncargadoController::class);
 ////con esto veo el id de la categoria que se va a presionar
 
 ///ruta autorizar producto
