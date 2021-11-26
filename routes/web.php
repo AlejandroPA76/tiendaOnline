@@ -69,7 +69,7 @@ Route::put('usuario/{id}/update',[AutenticarUser::class,'update'])->name('update
 
 ///menu respectivo de cada rol
 Route::get('/contador',[ContadorController::class,'index'])->name('contador.index');
-Route::get('/encargado',[EncargadoController::class,'index'])->name('encargado.index');
+Route::get('/encargado',[EncargadoController::class,'index1'])->name('encargado.index');
 Route::get('/supervisor',[SupervisorController::class,'index'])->name('supervisor.index');
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -80,7 +80,7 @@ Route::resource('categorias',CategoriaController::class);
 //////
 Route::resource('productos',ProductoController::class);
 Route::resource('usuarios',UsuarioController::class);
-Route::resource('supervisor',SupervisorController::class);
+Route::resource('encargado',EncargadoController::class);
 ////con esto veo el id de la categoria que se va a presionar
 
 ///ruta autorizar producto
