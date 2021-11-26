@@ -8,7 +8,7 @@
         <div class="col-md-4 offset-md-4">
             <div class="login-form bg-light mt-4 p-4">
 
-<form action="/encargado/{{$sl['id']}}" method="POST" class="row g-3">
+<form action="/encargados/{{$sl['id']}}" method="POST" class="row g-3">
     @csrf
     @method('PUT')
     <h4>Actualizar Informacion</h4>
