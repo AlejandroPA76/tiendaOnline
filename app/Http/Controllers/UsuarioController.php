@@ -17,6 +17,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
+        
         $cats = Categoria::orderBy('created_at','desc')->get();
         $id = auth::user()->id;
         return view('cliente.index', compact('cats','id'));

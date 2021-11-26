@@ -83,8 +83,11 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request,$id)
+    public function show(Request $request, $id)
     {
+       
+        
+        //aqui se muestran los productos de las categorias en especifico de una categorias sus productos
         $search1=$request->get('search');
         $Productos = DB::table('productos')->where('categoria_id',$id)->where('consignar','aceptado')->where('nombre','like','%' .$search1.'%')->get();
         if(!Auth::check()){

@@ -46,10 +46,13 @@
                                     <td>{{$sl->descripcion}}</td>
                                 </tr>
                                 
+
                                 <!-- Button trigger modal -->
-                                
+                                @can('buyPropioProducto',$sl)
                                 <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar al Carrito
                                 </button></td>
+                                @endcan
+
                             </tbody>
                         </table>          
                     </div>          

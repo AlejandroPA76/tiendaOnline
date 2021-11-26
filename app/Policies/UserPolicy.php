@@ -3,21 +3,26 @@
 namespace App\Policies;
 
 use App\Models\User;
+use App\Models\Producto;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+   public function buyPropioProducto(User $user, Producto $sl){
 
+    if($user->rol='vendedor'){
+        if ($user->id == $sl->propietario) {
+         return false;   
+        } 
+        if ($user->id != $sl->propietario) {
+         return true;   
+        } 
+
+    }
+    
+   
+   }
 
 }
