@@ -1,0 +1,44 @@
+[33mff255c3[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m vendedor no puede comprar su mismo producto-politicas
+[33m7d0c3c6[m Comentarios y respuestas terminado
+[33m64a1db8[m Comentarios falta respuestas v2
+[33m1714930[m Merge branch 'main' of https://github.com/angel-chido/APM-PWF-EQ3-REP
+[33mcb376c9[m Comentarios falta respuestas
+[33m9fc5391[m relacion de modelos
+[33mb0cb8bd[m agregue tabla
+[33m6283e98[m Comentarios parte grafica
+[33ma20ea26[m condicional donde se evita que el vendedor haga cualquier modificacion al producto si este esta condicionado
+[33m4300672[m redirecciones a la vista previa al eliminar una imagen
+[33m00a1979[m agregue agregar imagenes,eliminar imagenes,falta ordenar las acciones
+[33m94b197f[m eliminar imagenes junto con los productos
+[33m2a834c7[m agrego la funcion de agregar mas de una direccion para la galeria de imagenes
+[33m6321e4d[m mejoras breves
+[33m1418fac[m removi crud productos a supervisor
+[33ma7540ad[m productos solo aceptados
+[33maef4ffb[m agregue tablas y relaciones
+[33m77c632f[m Alex subelo aqui
+[33mf2ee8ac[m CRUD del Supervisor correccion v2
+[33m032f723[m CRUD del Supervisor correccion
+[33me7b8e88[m CRUD del Supervisor
+[33m6d6fd8a[m acepar o rechazar producto
+[33m7e48391[m agregue categorias
+[33m7cd3b36[m agregue menu ver productos pendientes
+[33m09bc2d7[m index encargado
+[33m1d2df74[m Correccion controller productos buscador
+[33m03c55f9[m se agrego eliminacion en cascada de las categorias con productos
+[33m3d90386[m busqueda agregada
+[33mbd7023e[m Alta Usuarios Hecho
+[33mf225780[m Usuarios modificacion de informacion y contrasena modificacion errores v3
+[33m3f9368e[m Usuarios modificacion de informacion y contrasena v2
+[33m5ce9002[m Usuarios modificacion de informacion v1
+[33m0932bd7[m Usuarios modificacion de informacion
+[33md9e25b4[m navbar
+[33m6b81a68[m categorias y productos menu
+[33m7cc02aa[m modificacion
+[33m93b74d6[m crud categorias
+[33m811260b[m backup
+[33m035ddcf[m s
+[33m7b609df[m se muestran todas las categorias
+[33m17c92e6[m agregue menu categorias
+[33m2caf035[m Agregando
+[33mf251ead[m cliente por default al registrarse
+[33mfd76383[m autenticacion

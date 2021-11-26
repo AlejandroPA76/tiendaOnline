@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\User;
 use App\Models\Categoria;
 use DB;
 
@@ -18,7 +19,7 @@ class EncargadoController extends Controller
         $this->middleware('auth');
         $this->middleware('encargado',['only'=> ['index']]);
     }
-    public function index()
+    public function index1()
     {
         $cats = Categoria::get();
         //return view('supervisor.crudCategoria',compact('cats'));
@@ -58,5 +59,99 @@ class EncargadoController extends Controller
         $sl->motivo=$request->input('motivo');
         $sl->save();
         return redirect()->route('listar.categoria.autorizar');
+    }
+
+    public function index()
+    {
+        $usrs = User::all();
+        return view('encargado.usuario.index',compact('usrs'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        return view('encargado.usuario.altaUsuario');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $r = new User;
+        $r->name = $request->input('name');
+        $r->apellido_p = $request->input('ApellidoP');
+        $r->apellido_m = $request->input('ApellidoM');
+        $r->email = $request->input('email');
+        $r->password = Hash::make($request->input('password'));
+        $r->rol = $request->input('rol');
+        $r->save();
+        return redirect('/');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $us = User::find($id);
+        $id = $us->id;
+        return view('encargado.usuario.indexEdit',compact('us','id'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $sl = User::find($id);
+        $id = $sl->id;
+        return view('encargado.usuario.infoEditar',compact('sl','id'));   
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+        $us = User::find($id);
+        $us->name = $request->input('name');
+        $us->apellido_p = $request->input('ApellidoP');
+        $us->apellido_m = $request->input('ApellidoM');
+        $us->email = $request->input('email');
+        $us->save();
+        
+        return redirect('encargado/'.$id);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
