@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Categoria;
+use App\Models\Multimedio;
 use DB;
 
 class EncargadoController extends Controller
@@ -47,7 +48,8 @@ class EncargadoController extends Controller
 
     public function decisionProducto($id){
          $sl = Producto::find($id);
-        return view('encargado.productos.autorizar',compact('sl'));
+         $photos = Multimedio::where('productos_id',$sl->id)->get();
+        return view('encargado.productos.autorizar',compact('sl','photos'));
     }
 
     public function aceptarProducto(Request $request,$id){
