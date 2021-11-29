@@ -22,6 +22,8 @@
                               <th >Apellido Paterno</th>
                               <th >Apellido Materno</th>
                               <th >Email</th>
+                              <th >Rol</th>
+                              <th >Accion</th>
 
                             </tr>
                           </thead>
@@ -44,10 +46,13 @@
                                     {{$us->email}}
                                 </td>
                                 <td>
+                                    {{$us->rol}}
+                                </td>
+                                <td>
         <a href="/supervisor/{{$us->id}}" class="btn btn-info btn-sm">Editar</a>
                                  </td>
                                  <td>
-         <form action="/categorias/{{$us->id}}" method="POST">
+         <form action="/supervisor/{{$us->id}}" method="POST">
              @csrf
              @method('delete')
              <input type="submit" class="btn btn-danger btn-sm" value="Eliminar" onclick="return confirm('deseas borrar?')">

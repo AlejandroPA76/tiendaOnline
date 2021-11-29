@@ -130,6 +130,8 @@ class SupervisorController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $delus=User::find($id);
+       $delus->delete();
+    return redirect('/');
     }
 }
