@@ -8,7 +8,7 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-header">
-                    <a class="btn btn-primary" href='/encargados/create'>Alta a un Usuario</a>
+                    {{--<a class="btn btn-primary" href='/encargados/create'>Alta a un Usuario</a>--}}
                     
                 </div>
 
@@ -22,7 +22,7 @@
                               <th >Apellido Paterno</th>
                               <th >Apellido Materno</th>
                               <th >Email</th>
-
+                              <th >Accion</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -46,14 +46,14 @@
                                 <td>
         <a href="/encargados/{{$us->id}}" class="btn btn-info btn-sm">Editar</a>
                                  </td>
-                                 <td>
+                                 {{--<td>
          <form action="#" method="POST">
              @csrf
              @method('delete')
              <input type="submit" class="btn btn-danger btn-sm" value="Eliminar" onclick="return confirm('deseas borrar?')">
              
          </form>
-                                 </td>
+                                 </td>--}}
                             </tr>
                             @endforeach
                           </tbody>

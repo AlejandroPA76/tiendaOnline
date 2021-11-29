@@ -15,7 +15,7 @@
         <h4 class="card-text">{{$us->email}}</h4>
 
         <div>
-            <a href="/encargados/{{$id}}/edit" class="btn btn-primary">Editar Informacion</a>
+            {{--<a href="/encargados/{{$id}}/edit" class="btn btn-primary">Editar Informacion</a>--}}
             <a href="/usuario/{{$us->id}}/updatePassword" class="btn btn-primary">Cambiar Contraseña</a>
           </div>
       </div>

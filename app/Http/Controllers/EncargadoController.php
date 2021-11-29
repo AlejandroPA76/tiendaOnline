@@ -67,7 +67,11 @@ class EncargadoController extends Controller
 
     public function index()
     {
-        $usrs = User::all();
+        $usrs = User::where('rol', 'encargado')
+                    ->orwhere('rol','cliente')
+                    ->orwhere('rol','vendedor')
+                    ->orwhere('rol','contador')
+                    ->get();
         return view('encargado.usuario.index',compact('usrs'));
     }
 
