@@ -15,8 +15,10 @@
         <div class="card-body">
           <h4 class="card-title">{{$cat->nombre}}</h4>
           <p class="card-text">{{$cat->descripcion}}</p>
+          
+          @if($cat->activa=='si')
           <a href="/productos/{{$cat->id}}" class="card-link">entrar</a>
-     
+         @endif
         </div>
         
       </div>

@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\User;
 use App\Models\Producto;
+use App\Models\Categoria;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class UserPolicy
@@ -24,5 +25,6 @@ class UserPolicy
     
    
    }
+   
 
 }

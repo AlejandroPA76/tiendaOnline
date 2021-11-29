@@ -91,6 +91,7 @@ class AccionesController extends Controller
         $us = User::find($id);
         $us->rol = $request->input('rol');
         $us->save();
+        return redirect('/');
     }
 
 }

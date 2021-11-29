@@ -70,7 +70,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Al convertirte en vendedor podras poner a la ventas tus productos y ganar muchos beneficios!
+        Al convertirte en vendedor podras poner a la ventas tus productos y ganar muchos beneficios!. <br>
+        Al presionar el boton azul estas aceptando ser un vendedor.
       </div>
       <div class="modal-footer">
         <form action="{{route('contratoVendedor',$id)}}" method="POST">
