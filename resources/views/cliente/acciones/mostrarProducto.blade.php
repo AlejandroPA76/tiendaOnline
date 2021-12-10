@@ -47,11 +47,45 @@
                                 </tr>
                                 
 
-                                <!-- Button trigger modal -->
-                                @can('buyPropioProducto',$sl)
-                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar al Carrito
-                                </button></td>
-                                @endcan
+                                <tr>
+                                    @can('buyPropioProducto',$sl)                                    
+                                    <form action="{{route('addPedido')}}" method="POST"> 
+                                        <td>
+                                           
+                                            <label>Stock Disponibles:</label>
+    
+                                                <div id="c-sto">
+                                                    <select name="Cantidad">
+                                                        <option value="1">1 Unidad</option>
+                                                        <option value="2">2 Unidad</option>
+                                                        <option value="3">3 Unidad</option>
+                                                        <option value="4">4 Unidad</option>
+                                                    </select>
+    
+                                                 <label>Disponibles: {{$sl->stock}}</label>
+                                                </div>
+    
+                                         </td>
+    
+                                        <td>
+                                    
+                                                @csrf
+                                                <input type="hidden" class="form-control"  name="User_id" value="{{Auth::user()->id}}">
+                                                <input type="hidden" class="form-control"  name="Productos_id" value="{{$sl->id}}">
+                                                <button  class='btn btn-primary' type="submit">Agregar al Carrito</button>    
+                                        
+                                        </td>
+                                    </form>
+                                    
+                                    <td>
+                                    <form >
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comprar Ahora</button>
+                                    </form>    
+                                    </td>
+    
+                                    
+                                    @endcan
+                                    </tr>
 
                             </tbody>
                         </table>          
