@@ -116,7 +116,7 @@ class AccionesController extends Controller
         $total = 0;
         $qry = DB::table('pedidos')
         ->join('productos','pedidos.productos_id','=','productos.id')
-        ->select('productos.nombre','productos.precio','pedidos.cantidad')
+        ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id')
         ->where('pedidos.user_id','=',$id)
         ->get();
         
@@ -129,10 +129,7 @@ class AccionesController extends Controller
           $total += $mul;
         }
 
-        //print_r($cls);
-
-        
-                 
+        //print_r($cls);         
 
         
         if($id != auth::user()->id){
@@ -142,6 +139,19 @@ class AccionesController extends Controller
         return view('cliente.acciones.mostrarCarrito',compact('cls','id','total'));
         }   
         
+    }
+
+    public function deleteProductoPedido($id){
+        $pd = Pedido::find($id);
+
+        $pd->cantidad;
+
+        $us = Producto::find($pd->productos_id);        
+        $us->stock += $pd->cantidad;
+        $us->save();
+
+        $pd->delete();
+        return redirect('showPedido/'.auth::user()->id);
     }
 
 

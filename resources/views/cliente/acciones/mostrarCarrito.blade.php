@@ -24,21 +24,26 @@
                             <tbody>
                                 @foreach ($cls as $cs)
                                 <tr>
-                                    <td>
-                                        <h5>{{$cs['nombre']}}</h5>
-                                    </td>
-
-                                    <td>
-                                        {{$cs['precio']}}
-                                    </td>
-
-                                    <td>
-                                        {{$cs['cantidad']}}
-                                    </td>
-                                    
+                                        <td>
+                                            <h5>{{$cs['nombre']}}</h5>
+                                        </td>
+    
+                                        <td>
+                                            {{$cs['precio']}}
+                                        </td>
+    
+                                        <td>
+                                            {{$cs['cantidad']}}
+                                        </td>
                                 </tr>
                                 <tr>
-                                    
+                                    <td>
+                                        <form action="/deleteProductoPedido/{{ $cs["id"] }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                                <input type="submit" class="btn btn-danger btn-sm" value="Eliminar" onclick="return confirm('Deseas borrar el Producto de tu Carrito?')">
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 <tr>
@@ -46,6 +51,8 @@
                                     <td></td>
                                     <td><h5>Total: {{$total}}</h5></td>
                                 </tr>
+
+
                             </tbody>                            
                         
                     </table>   

@@ -110,8 +110,9 @@
                         {{--
                         <li><a href="/usuarios/{{$id}}" class="nav-item nav-link active">Mi Perfil</a></li> 
                         --}}
+                        <li><a href="/usuarios/{{Auth::user()->id}}" class="nav-item nav-link active">Mi Perfil</a></li>
                        <li><a href="/productos" class="nav-item nav-link active">Productos en venta</a></li>
-                       <li><a href="/showPedido/{{$id}}" class="nav-item nav-link active">Carrito</a></li>
+                       <li><a href="/showPedido/{{Auth::user()->id}}" class="nav-item nav-link active">Carrito</a></li>
                     @endif
 
                       <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>

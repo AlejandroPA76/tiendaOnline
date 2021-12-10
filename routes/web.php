@@ -107,5 +107,6 @@ Route::get('Showproducto/{id}',[AccionesController::class,'showProducto']);
 
 Route::post('/addPedido',[AccionesController::class,'addPedido'])->name('addPedido');
 Route::get('/showPedido/{id}',[AccionesController::class,'showPedido'])->name('showPedido');
+Route::delete('/deleteProductoPedido/{id}',[AccionesController::class,'deleteProductoPedido'])->name('deleteProductoPedido');
 ////
 Route::put('cliente/contrato{id}',[AccionesController::class,'clienteVendedor'])->name('contratoVendedor');

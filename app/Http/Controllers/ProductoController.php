@@ -19,10 +19,10 @@ class ProductoController extends Controller
    public function index(Request $request)
     {
         //obtengo el id del usuario y por medio de este muestro sus productos que tiene a la venta
-        $usuario=auth()->user()->id;
+        $id=auth()->user()->id;
         //$pds = Producto::all();
-        $pds = DB::table('productos')->where('propietario',$usuario)->get();
-        return view('supervisor.producto.index',compact('pds'));
+        $pds = DB::table('productos')->where('propietario',$id)->get();
+        return view('supervisor.producto.index',compact('pds','id'));
 
         
 
