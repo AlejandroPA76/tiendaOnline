@@ -20,7 +20,7 @@
             
                               <th >Nombre</th>
                               <th >Descripcion</th>
-                              <th >Imagen</th>
+                              
                               <th >Activa</th>
                               <th >Accion</th>
                             </tr>
@@ -37,9 +37,7 @@
                                     {{$cat->descripcion}}
                                   </td>
 
-                                 <td>
-                                    {{$cat->imagen}}
-                                </td>
+                                
                                  <td>
                                     {{$cat->activa}}
                                 </td>

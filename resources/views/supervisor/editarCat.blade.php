@@ -24,10 +24,7 @@
   </div>
 <br>
 
- <div class="form-group">
-    <label for="">Imagen:</label>
-    <input type="file" name="imagen" id="uploadImage" size="30" /> 
-  </div>
+ 
 
 <br>
 

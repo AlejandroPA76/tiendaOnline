@@ -23,12 +23,12 @@
   </div>
 <br>
 
- <div class="form-group">
+ {{--<div class="form-group">
     <label for="">Imagen:</label>
     <input type="file" name="imagen" id="uploadImage" size="30" /> 
   </div>
 
-<br>
+<br> --}}
 
   <div class="form-group">
     <label for="">Activa:</label>
