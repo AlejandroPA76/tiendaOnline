@@ -35,7 +35,8 @@ class AutenticarUser extends Controller
         
     }
      if(Auth::attempt($credenciales) && auth::user()->rol=="vendedor"){
-        return view('vendedor.index');
+        $id =  auth::user()->id;
+        return view('vendedor.index',compact('id'));
         
     }
     

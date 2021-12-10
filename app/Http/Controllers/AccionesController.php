@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comentario;
 use App\Models\Producto;
 use App\Models\Multimedio;
+use App\Models\Pedido;
 use App\Models\Respuesta;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -93,5 +94,66 @@ class AccionesController extends Controller
         $us->save();
         return redirect('/');
     }
+
+    public function addPedido(Request $request){
+        $pd = new Pedido();
+
+        $pd->cantidad = $request->Cantidad;
+        $pd->user_id = $request->User_id;
+        $pd->productos_id = $request->Productos_id;
+        $pd->created_at = date('Y-m-d');
+
+        $nus = Producto::find($request->Productos_id);
+        $nus->stock = $nus->stock - $request->Cantidad;
+        $nus->save();
+
+        $pd->save();
+
+        return redirect('Showproducto/'.$request->Productos_id);
+    }
+
+    public function showPedido($id){
+        $total = 0;
+        $qry = DB::table('pedidos')
+        ->join('productos','pedidos.productos_id','=','productos.id')
+        ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id')
+        ->where('pedidos.user_id','=',$id)
+        ->get();
+        
+        
+
+        $cls = json_decode(json_encode($qry), true);
+
+        foreach ($cls as $cs) {
+          $mul = $cs['precio'] * $cs['cantidad'];
+          $total += $mul;
+        }
+
+        //print_r($cls);         
+
+        
+        if($id != auth::user()->id){
+            return redirect('showPedido/'.auth::user()->id);
+        }else{
+        $id = auth::user()->id;
+        return view('cliente.acciones.mostrarCarrito',compact('cls','id','total'));
+        }   
+        
+    }
+
+    public function deleteProductoPedido($id){
+        $pd = Pedido::find($id);
+
+        $pd->cantidad;
+
+        $us = Producto::find($pd->productos_id);        
+        $us->stock += $pd->cantidad;
+        $us->save();
+
+        $pd->delete();
+        return redirect('showPedido/'.auth::user()->id);
+    }
+
+
 
 }
