@@ -56,10 +56,12 @@
     
                                                 <div id="c-sto">
                                                     <select name="Cantidad">
-                                                        <option value="1">1 Unidad</option>
-                                                        <option value="2">2 Unidad</option>
-                                                        <option value="3">3 Unidad</option>
-                                                        <option value="4">4 Unidad</option>
+                                                        @for ($i = 1; $i <= $sl->stock; $i++)
+                                                       
+                                                         <option value="{{$i}}">{{$i}} Unidad</option>
+                                                        @endfor
+                                                        
+                                                        
                                                     </select>
     
                                                  <label>Disponibles: {{$sl->stock}}</label>
@@ -72,14 +74,17 @@
                                                 @csrf
                                                 <input type="hidden" class="form-control"  name="User_id" value="{{Auth::user()->id}}">
                                                 <input type="hidden" class="form-control"  name="Productos_id" value="{{$sl->id}}">
+                                                @if($sl->stock !=0)
                                                 <button  class='btn btn-primary' type="submit">Agregar al Carrito</button>    
-                                        
+                                                @endif
                                         </td>
                                     </form>
                                     
                                     <td>
                                     <form >
+                                        @if($sl->stock !=0)
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comprar Ahora</button>
+                                        @endif
                                     </form>    
                                     </td>
     

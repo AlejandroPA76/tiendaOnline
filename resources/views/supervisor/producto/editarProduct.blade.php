@@ -58,6 +58,7 @@
     <input type="file" name="imagenUpdate[]" size="30" multiple/> 
   </div>
 
+
  <div class="form-group">
     <label for="">stock</label>
     <input type="number" class="form-control" name="stock"

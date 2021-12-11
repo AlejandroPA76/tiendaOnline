@@ -66,7 +66,7 @@
                                     {{$pd->motivo}}
                                 </td>
                 {{--si el status del producto es diferente de aceptado este le mostrara las opciones de editar y eliminar, si en dado caso es aceptado este no mostrara ninguna opcion--}}
-@if($pd->consignar!='aceptado')
+@if($pd->consignar!='aceptado' or $pd->stock==0)
                                 <td>
         <a href="/productos/{{$pd->id}}/edit" class="btn btn-info btn-sm">Editar</a>
                                  </td>

@@ -19,7 +19,7 @@ class CreateProductosTable extends Migration
             $table->text('descripcion')->nullable();
             $table->double('precio',8,2);
             $table->string('imagen')->nullable();
-             $table->integer('stock');
+             $table->integer('stock')->unsigned();
              $table->string('consignar')->nullable();
              $table->integer('porcentaje')->nullable();
              $table->string('motivo')->nullable();
