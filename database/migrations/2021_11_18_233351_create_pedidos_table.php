@@ -17,7 +17,8 @@ class CreatePedidosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('cantidad');
-
+            $table->string('tipo_pago');
+            $table->string('status');
             
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('productos_id')->constrained('productos');

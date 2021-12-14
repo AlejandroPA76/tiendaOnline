@@ -3,11 +3,14 @@
 @section('title','Registrate es gratis!')
 
 @section('contenido')
+{{--libreria de ajax--}}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="login-form bg-light mt-4 p-4">
-                    <form action="/usuarios" method="post" class="row g-3">
+                    <form action="/usuarios" method="post" class="row g-3" id="form1">
                         @csrf
                         <h4>Registrate</h4>
                         <div class="col-12">
@@ -42,20 +45,24 @@
 
                         <div class="col-12">
                             <label>Email</label>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <input id="email" type="email" class="form-control 
+                            @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"
+                            onblur="myFunction()">
                             @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                        
+                       
                         </div>
-            
+            <div id="alerta"></div>
 
                         <div class="col-12">
-                            <label>Contrasena</label>
+                            <label>Contrasenaaa</label>
                              <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                              @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert" role="alert" style="display:none;" >
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -82,7 +89,32 @@
             </div>
         </div>
     </div>
+
+    
 @endsection
+
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("email").value;
+  
+  if(x !=0){
+//datos iran a el controlador AccionesController
+   $.ajax({
+    method:'post',
+    url:'{{route('validaCorreo')}}',
+    data:$("#form1").serialize()
+   }).done(function(res){
+   
+     alert(res);
+    
+
+   })
+
+  }
+ 
+}
+
+</script>
 
     
 

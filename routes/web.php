@@ -110,3 +110,5 @@ Route::get('/showPedido/{id}',[AccionesController::class,'showPedido'])->name('s
 Route::delete('/deleteProductoPedido/{id}',[AccionesController::class,'deleteProductoPedido'])->name('deleteProductoPedido');
 ////
 Route::put('cliente/contrato{id}',[AccionesController::class,'clienteVendedor'])->name('contratoVendedor');
+
+Route::post('correo/validar-existencia',[AccionesController::class, 'validadCorreoExistencia'])->name('validaCorreo');
