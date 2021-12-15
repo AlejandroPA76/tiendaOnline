@@ -57,16 +57,20 @@
 
                                 <tr>
                                     @if ($total != 0)
+                                    <form action="/pagarPedido/{{$id}}" method="POST">
+                                        @csrf
                                     <td>
                                         <h6>Seleccione Tipo de Pago</h6>    
-                                        <select name="rol">
-                                            <option value="">Online</option>
-                                            <option value="">Pagar en el Banco</option>
+                                        <select name="Pgs">
+                                            <option value="On">Online</option>
+                                            <option value="Pb">Pagar en el Banco</option>
                                         </select> 
                                     </td>
                                     <td></td>                                    
-                                    <td>
-                                        <a  href="/pagarPedido/{{$id}}" class='btn btn-primary' type="submit">Comprar Ahora!!</a></td>
+                                    <td> 
+                                            <button   class='btn btn-primary' type="submit">Comprar Ahora!!</button>
+                                    </td>
+                                    </form>
                                     @endif
                                     
                                 </tr>

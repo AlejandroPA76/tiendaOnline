@@ -24,8 +24,5 @@ class Pedido extends Model
         return $this->belongsTo('App\Models\Detallepedido');
     }
 
-     public function orden(){
-        //UNA PUEDE PERTENERCER A UNA orden
-        return $this->belongsTo('App\Models\Orden');
-    }
+     
 }

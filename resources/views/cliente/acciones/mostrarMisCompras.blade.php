@@ -8,10 +8,11 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-body">
-
+                                             
                     <table class="table">
                         <thead>
                             <tr>
+                              <th >Folio</th>  
                               <th >Producto</th>
                               <th >Precio</th>
                               <th >Cantidad</th>
@@ -23,6 +24,9 @@
                         <tbody>
                             @foreach ($cls as $cs)
                             <tr>
+                                    <td>
+                                        {{$cs['folio']}}
+                                    </td>
                                     <td>
                                         <h5>{{$cs['nombre']}}</h5>
                                     </td>

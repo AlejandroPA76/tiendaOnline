@@ -11,11 +11,12 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\Return_;
 
 class AccionesController extends Controller
 {
     //
-    private $
+    private $orden;
 
     public function showProducto($id){
 
@@ -105,6 +106,7 @@ class AccionesController extends Controller
         $pd->user_id = $request->User_id;
         $pd->productos_id = $request->Productos_id;
         
+        
         $pd->created_at = date('Y-m-d');
 
         $nus = Producto::find($request->Productos_id);
@@ -165,9 +167,9 @@ class AccionesController extends Controller
         $total = 0;
         $qry = DB::table('pedidos')
         ->join('productos','pedidos.productos_id','=','productos.id')
-        ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id','pedidos.status')
+        ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id','pedidos.status','pedidos.folio')
         ->where('pedidos.user_id','=',$id)
-        ->where('pedidos.status','=','pendiente')
+        ->where('pedidos.status','!=','carrito')
         ->get();
         
         
@@ -191,8 +193,9 @@ class AccionesController extends Controller
     }
 
     public function pagarPedido(Request $request, $id){
+        $folio = uniqid();
         $qry = DB::table('pedidos')
-        ->select('pedidos.id')
+        ->select('pedidos.id','pedidos.folio')
         ->where('pedidos.user_id','=',$id)
         ->where('pedidos.status','=','carrito')
         ->get();
@@ -200,14 +203,32 @@ class AccionesController extends Controller
 
         $cls = json_decode(json_encode($qry), true);
 
-        //print_r($cls);
+        //var_dump($request->Pgs);
+
+        
 
         foreach ($cls as $cs) {
-            print_r($cs['id']);
+
+
+            //print_r($cs['id']);
              $pd = Pedido::find($cs['id']);
-             $pd->status = "pendiente";
+            if($request->Pgs == 'On'){
+                $pd->status = "aceptado";
+                $pd->tipopago = "Online";
+                if(is_null($pd->folio)){
+                    $pd->folio = $folio;
+                }
+            }else if($request->Pgs == 'Pb'){
+                $pd->status = "pendiente";
+                $pd->tipopago = "Banco";
+                if(is_null($pd->folio)){
+                    $pd->folio = $folio;
+                }
+            }
              $pd->save();
         }
+
+        //return redirect('/');
     }
 
     public function validadCorreoExistencia(Request $request){
@@ -219,7 +240,9 @@ class AccionesController extends Controller
          //$us = User::all()->get();
          //aqui hago una consulta a la base de datos para saber si hay algun correo electronico
          //similar al que llego por requests y traigo solo el campo email con ->value
-         $us = DB::table('users')->where('email',$mivariable)->value('email');
+         $us = DB::table('users')
+         ->where('email',$mivariable)
+         ->value('email');
          //echo($us);
          //comparo si el resultado de la consulta es igual al email que introduje
          if ($us == $mivariable) {
@@ -230,6 +253,10 @@ class AccionesController extends Controller
          }
  
      }
+
+ 
+
+     
  
 
 

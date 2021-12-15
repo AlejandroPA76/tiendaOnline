@@ -19,12 +19,12 @@ class CreatePedidosTable extends Migration
             $table->integer('cantidad');
             $table->string('tipopago')->nullable();
             $table->string('status')->nullable();
-            
+            $table->string('folio')->nullable();
             
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('productos_id')->constrained('productos');
 
-            $table->foreignId('orden_id')->constrained('ordens');
+            
         });
     }
 
