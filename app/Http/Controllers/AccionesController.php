@@ -102,7 +102,7 @@ class AccionesController extends Controller
         $pd->status = "carrito";
         $pd->user_id = $request->User_id;
         $pd->productos_id = $request->Productos_id;
-
+        
         $pd->created_at = date('Y-m-d');
 
         $nus = Producto::find($request->Productos_id);
@@ -113,7 +113,7 @@ class AccionesController extends Controller
 
         return redirect('Showproducto/'.$request->Productos_id);
     }
-    
+
 
     public function showPedido($id){
         $total = 0;

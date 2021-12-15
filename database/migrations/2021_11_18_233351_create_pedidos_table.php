@@ -19,7 +19,7 @@ class CreatePedidosTable extends Migration
             $table->integer('cantidad');
             $table->string('tipopago')->nullable();
             $table->string('status')->nullable();
-            $table->string('codigodecompra')->nullable();
+            
             
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('productos_id')->constrained('productos');
