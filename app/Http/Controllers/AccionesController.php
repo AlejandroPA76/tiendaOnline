@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Auth;
 class AccionesController extends Controller
 {
     //
+    private $
+
     public function showProducto($id){
 
         $sl  = Producto::find($id);

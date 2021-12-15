@@ -23,6 +23,8 @@ class CreatePedidosTable extends Migration
             
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('productos_id')->constrained('productos');
+
+            $table->foreignId('orden_id')->constrained('ordens');
         });
     }
 
