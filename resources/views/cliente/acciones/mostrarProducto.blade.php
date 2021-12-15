@@ -57,7 +57,6 @@
                                                 <div id="c-sto">
                                                     <select name="Cantidad">
                                                         @for ($i = 1; $i <= $sl->stock; $i++)
-                                                       
                                                          <option value="{{$i}}">{{$i}} Unidad</option>
                                                         @endfor
                                                         

@@ -99,8 +99,10 @@ class AccionesController extends Controller
         $pd = new Pedido();
 
         $pd->cantidad = $request->Cantidad;
+        $pd->status = "carrito";
         $pd->user_id = $request->User_id;
         $pd->productos_id = $request->Productos_id;
+
         $pd->created_at = date('Y-m-d');
 
         $nus = Producto::find($request->Productos_id);
@@ -118,6 +120,7 @@ class AccionesController extends Controller
         ->join('productos','pedidos.productos_id','=','productos.id')
         ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id')
         ->where('pedidos.user_id','=',$id)
+        ->where('pedidos.status','=','carrito')
         ->get();
         
         
@@ -154,6 +157,54 @@ class AccionesController extends Controller
         return redirect('showPedido/'.auth::user()->id);
     }
 
+    
+    public function showDetallesPedido($id){
+        $total = 0;
+        $qry = DB::table('pedidos')
+        ->join('productos','pedidos.productos_id','=','productos.id')
+        ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id','pedidos.status')
+        ->where('pedidos.user_id','=',$id)
+        ->where('pedidos.status','=','pendiente')
+        ->get();
+        
+        
 
+        $cls = json_decode(json_encode($qry), true);
+
+        foreach ($cls as $cs) {
+          $mul = $cs['precio'] * $cs['cantidad'];
+          $total += $mul;
+        }
+
+        //print_r($cls);         
+
+        
+        if($id != auth::user()->id){
+            return redirect('showPedido/'.auth::user()->id);
+        }else{
+        $id = auth::user()->id;
+        return view('cliente.acciones.mostrarMisCompras',compact('cls','id','total'));
+        }   
+    }
+
+    public function pagarPedido(Request $request, $id){
+        $qry = DB::table('pedidos')
+        ->select('pedidos.id')
+        ->where('pedidos.user_id','=',$id)
+        ->where('pedidos.status','=','carrito')
+        ->get();
+        
+
+        $cls = json_decode(json_encode($qry), true);
+
+        //print_r($cls);
+
+        foreach ($cls as $cs) {
+            print_r($cs['id']);
+             $pd = Pedido::find($cs['id']);
+             $pd->status = "pendiente";
+             $pd->save();
+        }
+    }
 
 }

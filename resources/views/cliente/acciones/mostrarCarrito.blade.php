@@ -47,9 +47,28 @@
                                 </tr>
                                 @endforeach
                                 <tr>
+                                    @if ($total != 0)
                                     <td></td>
                                     <td></td>
                                     <td><h5>Total: {{$total}}</h5></td>
+                                    @endif
+                                </tr>
+
+
+                                <tr>
+                                    @if ($total != 0)
+                                    <td>
+                                        <h6>Seleccione Tipo de Pago</h6>    
+                                        <select name="rol">
+                                            <option value="">Online</option>
+                                            <option value="">Pagar en el Banco</option>
+                                        </select> 
+                                    </td>
+                                    <td></td>                                    
+                                    <td>
+                                        <a  href="/pagarPedido/{{$id}}" class='btn btn-primary' type="submit">Comprar Ahora!!</a></td>
+                                    @endif
+                                    
                                 </tr>
 
 
