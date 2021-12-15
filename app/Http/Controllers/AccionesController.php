@@ -113,6 +113,7 @@ class AccionesController extends Controller
 
         return redirect('Showproducto/'.$request->Productos_id);
     }
+    
 
     public function showPedido($id){
         $total = 0;
@@ -207,6 +208,28 @@ class AccionesController extends Controller
         }
     }
 
-    
+    public function validadCorreoExistencia(Request $request){
+        //echo('holaaa');
+         //aqui llega lo que introduje el email 
+         $mivariable = $request->input('email');
+         //echo($mivariable);
+ 
+         //$us = User::all()->get();
+         //aqui hago una consulta a la base de datos para saber si hay algun correo electronico
+         //similar al que llego por requests y traigo solo el campo email con ->value
+         $us = DB::table('users')->where('email',$mivariable)->value('email');
+         //echo($us);
+         //comparo si el resultado de la consulta es igual al email que introduje
+         if ($us == $mivariable) {
+             echo "Este correo ya esta registrado";
+         }
+         if ($us != $mivariable) {
+          echo "Puedes registrarte con este email";
+         }
+ 
+     }
+ 
+
+
 
 }
