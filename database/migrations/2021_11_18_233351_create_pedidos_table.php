@@ -20,6 +20,7 @@ class CreatePedidosTable extends Migration
             $table->string('tipopago')->nullable();
             $table->string('status')->nullable();
             $table->string('folio')->nullable();
+            $table->string('img')->nullable();
             
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('productos_id')->constrained('productos');

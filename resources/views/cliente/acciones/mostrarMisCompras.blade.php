@@ -8,7 +8,6 @@
         <div class="col-md-11">
             <div class="card">
                 <div class="card-body">
-                                             
                     <table class="table">
                         <thead>
                             <tr>
@@ -56,7 +55,6 @@
                             @endforeach
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>

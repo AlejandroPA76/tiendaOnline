@@ -137,9 +137,10 @@ class AccionesController extends Controller
           $total += $mul;
         }
 
+
         //print_r($cls);         
 
-        
+         
         if($id != auth::user()->id){
             return redirect('showPedido/'.auth::user()->id);
         }else{
@@ -181,7 +182,9 @@ class AccionesController extends Controller
           $total += $mul;
         }
 
-        //print_r($cls);         
+        
+        
+        
 
         
         if($id != auth::user()->id){
@@ -228,7 +231,7 @@ class AccionesController extends Controller
              $pd->save();
         }
 
-        //return redirect('/');
+        return redirect('showDetallesPedido/'.auth::user()->id);
     }
 
     public function validadCorreoExistencia(Request $request){
