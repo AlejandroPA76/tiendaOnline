@@ -114,3 +114,7 @@ Route::delete('/deleteProductoPedido/{id}',[AccionesController::class,'deletePro
 Route::put('cliente/contrato{id}',[AccionesController::class,'clienteVendedor'])->name('contratoVendedor');
 
 Route::post('correo/validar-existencia',[AccionesController::class, 'validadCorreoExistencia'])->name('validaCorreo');
+
+
+Route::get('pagos/validar-bouchers',[ContadorController::class,'listaPagos'])
+->name('lista.pagos');

@@ -23,7 +23,6 @@
                               <th >Descripcion</th>
                               <th >Precio</th>
                               <th>stock</th>
-                              <th>imagen</th>
                               <th>categoria</th>
                               <th>status</th>
                               <th>motivo</th>
@@ -49,11 +48,7 @@
                                  <td>
                                     {{$pd->stock}}
                                 </td>
-                        
-                                <td>
-                                    
-                                    {{$pd->imagen}}
-                                </td>
+                    
                                 <td>
                                     
                                     {{$pd->categoria_id}}

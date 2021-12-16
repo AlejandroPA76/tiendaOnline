@@ -115,6 +115,11 @@
                        <li><a href="/showDetallesPedido/{{Auth::user()->id}}" class="nav-item nav-link active">Mis Compras</a></li>
                     @endif
 
+                    @if(auth()->user()->rol=="contador")
+                    <li><a href="{{route("lista.pagos")}}" class="nav-item nav-link active">Autorizar boucher</a></li>
+
+                    @endif
+
                       <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>
                   @endauth
                   

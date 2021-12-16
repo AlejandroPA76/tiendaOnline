@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pedido;
 
 class ContadorController extends Controller
 {
@@ -81,5 +82,11 @@ class ContadorController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function listaPagos(){
+        $pagoPedidoPendidente = Pedido::where('status','pendiente')->get();
+        //echo($pagoPedidoPendidente);
+        return view('contador.boucher.mostrarBouchers',compact('pagoPedidoPendidente'));
     }
 }
