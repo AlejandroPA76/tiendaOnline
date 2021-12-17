@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\Storage;
 
 class AccionesController extends Controller
 {
@@ -164,23 +165,24 @@ class AccionesController extends Controller
     }
 
     
-    public function showDetallesPedido($id){
+    public function showPedidos($id){
         $total = 0;
-        $qry = DB::table('pedidos')
-        ->join('productos','pedidos.productos_id','=','productos.id')
-        ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id','pedidos.status','pedidos.folio')
-        ->where('pedidos.user_id','=',$id)
-        ->where('pedidos.status','!=','carrito')
-        ->get();
+        //$qry = DB::table('pedidos')
+        //->join('productos','pedidos.productos_id','=','productos.id')
+        //->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id','pedidos//.status','pedidos.folio','pedidos.img')
+        //->where('pedidos.user_id','=',$id)
+        //->where('pedidos.status','!=','carrito')
+        //->get();
+        $qry = DB::select('select distinct folio, status, img from pedidos');
         
         
 
         $cls = json_decode(json_encode($qry), true);
 
-        foreach ($cls as $cs) {
-          $mul = $cs['precio'] * $cs['cantidad'];
-          $total += $mul;
-        }
+        //foreach ($cls as $cs) {
+        //  $mul = $cs['precio'] * $cs['cantidad'];
+        //  $total += $mul;
+        //}
 
         
         
@@ -191,7 +193,7 @@ class AccionesController extends Controller
             return redirect('showPedido/'.auth::user()->id);
         }else{
         $id = auth::user()->id;
-        return view('cliente.acciones.mostrarMisCompras',compact('cls','id','total'));
+        return view('cliente.acciones.mostrarMisCompras',compact('cls','id'));
         }   
     }
 
@@ -231,7 +233,7 @@ class AccionesController extends Controller
              $pd->save();
         }
 
-        return redirect('showDetallesPedido/'.auth::user()->id);
+        return redirect('showPedidos/'.auth::user()->id);
     }
 
     public function validadCorreoExistencia(Request $request){
@@ -257,11 +259,46 @@ class AccionesController extends Controller
  
      }
 
- 
+     public function menuComprobante(Request $request){
+        $qry = DB::table('pedidos')
+        ->join('productos','pedidos.productos_id','=','productos.id')
+        ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id','pedidos.status','pedidos.folio','pedidos.img')
+        ->where('pedidos.user_id','=',auth()->user()->id)
+        ->where('pedidos.folio','=',$request['folio'])
+        ->get();
 
-     
- 
+        $cls = json_decode(json_encode($qry), true);
 
+        foreach($cls as $cl){
+          
+            $status = $cl['status'];
+
+        }
+        return view('cliente.acciones.mostrarPedido',compact('cls','status'));
+     }
+
+     public function subirComprobante(Request $request){
+        //var_dump($request['foto']. '  '. $request['folio']);
+
+        $qry = DB::table('pedidos')
+        ->select('pedidos.id')
+        ->where('pedidos.user_id','=',auth()->user()->id)
+        ->where('pedidos.folio','=',$request['folio'])
+        ->get();
+
+         $cls = json_decode(json_encode($qry), true);
+
+         foreach($cls as $cl){
+            $pedido = Pedido::find($cl['id']);
+            if($request->hasfile('foto')){
+            $pedido['img']=$request->file('foto')->store('uploads','public');
+        }else{echo('esta vacias');}
+            $pedido->save();
+         }
+
+
+
+     }
 
 
 }

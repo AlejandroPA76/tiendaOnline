@@ -15,7 +15,6 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->integer('cantidad');
             $table->string('tipopago')->nullable();
             $table->string('status')->nullable();
@@ -24,7 +23,7 @@ class CreatePedidosTable extends Migration
             
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('productos_id')->constrained('productos');
-
+            $table->timestamps();
             
         });
     }

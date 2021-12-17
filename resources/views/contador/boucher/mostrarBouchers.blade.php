@@ -11,12 +11,16 @@
                 <div class="card-body">
 
             <table class="table">
+              <form action="{{route('ver.boucher')}}" method="post">
+                @csrf                
+
+            
                           <thead>
                             <tr>
             
                               <th >Folio</th>
                               <th >Status</th>
-                              <th >Cantidad</th>
+                            
                               <th>Acccion</th>
 
                             </tr>
@@ -24,13 +28,17 @@
                           <tbody>
                             @foreach($pagoPedidoPendidente as $ppp)
                             	<tr>
-							      <td>{{$ppp->folio}}</td>
-							      <td>{{$ppp->status}}</td>
-							      <td>{{$ppp->cantidad}}</td>
-							      <td><a href="">ver</a></td>
+							      <td>{{$ppp['folio']}}</td>
+							      <td>{{$ppp['status']}}</td>
+							      <td>
+                      <input type="hidden" name="folio" value="{{$ppp['folio']}}">
+                       <button type="submit" class="btn btn-primary">Ver</button>
+
+                    </td>
 							    </tr>
                             @endforeach
                           </tbody>
+                          </form>
                         </table>
  </div>
                 

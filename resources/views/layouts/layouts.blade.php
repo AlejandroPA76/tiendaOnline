@@ -54,7 +54,7 @@
                     @if(auth()->user()->rol=="cliente")
                       <li><a href="/usuarios/{{$id}}" class="nav-item nav-link active">Mi Perfil</a></li>
                       <li><a href="/showPedido/{{$id}}" class="nav-item nav-link active">Carrito</a></li>
-                      <li><a href="/showDetallesPedido/{{Auth::user()->id}}" class="nav-item nav-link active">Mis Compras</a></li>
+                      <li><a href="/showPedidos/{{Auth::user()->id}}" class="nav-item nav-link active">Mis Compras</a></li>
 <!-- Button trigger modal -->
 
 <li><a href="" class="nav-item nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal">Convertirme en vendedor</a></li>
@@ -112,7 +112,7 @@
                        <li><a href="/productos" class="nav-item nav-link active">Productos en venta</a></li>
                        <li><a href="/showPedido/{{Auth::user()->id}}" class="nav-item nav-link active">Carrito</a></li>
                        
-                       <li><a href="/showDetallesPedido/{{Auth::user()->id}}" class="nav-item nav-link active">Mis Compras</a></li>
+                       <li><a href="/showPedidos/{{Auth::user()->id}}" class="nav-item nav-link active">Mis Compras</a></li>
                     @endif
 
                     @if(auth()->user()->rol=="contador")

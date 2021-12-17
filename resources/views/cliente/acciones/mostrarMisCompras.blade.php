@@ -11,12 +11,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                              <th >Folio</th>  
-                              <th >Producto</th>
-                              <th >Precio</th>
-                              <th >Cantidad</th>
-                              <th >Estatus</th>
-                              <th >Total</th>
+                              <th >Folio de la compra</th>  
+                              <th>status</th>
                               <th >Acciones</th>
                             </tr>
                         </thead>
@@ -26,30 +22,15 @@
                                     <td>
                                         {{$cs['folio']}}
                                     </td>
-                                    <td>
-                                        <h5>{{$cs['nombre']}}</h5>
-                                    </td>
 
-                                    <td>
-                                        {{$cs['precio']}}
-                                    </td>
-
-                                    <td>
-                                        {{$cs['cantidad']}}
-                                    </td>
-
-                                    <td>
+                                   <td>
                                         {{$cs['status']}}
                                     </td>
 
                                     <td>
-                                        {{$cs['precio']*$cs['cantidad']}}
-                                    </td>
-
-                                    <td>
-                                        @if ($cs['status'] == 'pendiente')
-                                            <a  href="" class='btn btn-primary' type="submit">Subir Comprobante de Pago!!</a>   
-                                        @endif
+                                        
+                                            <a  href="{{route('menuComprobante',$cs['folio'])}}" class='btn btn-primary' type="submit">ver Compra</a>   
+                                        
                                     </td>
                             </tr>
                             @endforeach

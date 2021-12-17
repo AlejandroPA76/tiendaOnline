@@ -107,7 +107,7 @@ Route::get('Showproducto/{id}',[AccionesController::class,'showProducto']);
 
 Route::post('/addPedido',[AccionesController::class,'addPedido'])->name('addPedido');
 Route::get('/showPedido/{id}',[AccionesController::class,'showPedido'])->name('showPedido');
-Route::get('/showDetallesPedido/{id}',[AccionesController::class,'showDetallesPedido'])->name('showDetallesPedido');
+Route::get('/showPedidos/{id}',[AccionesController::class,'showPedidos'])->name('showPedidos');
 Route::post('/pagarPedido/{id}',[AccionesController::class,'pagarPedido'])->name('pagarPedido');
 Route::delete('/deleteProductoPedido/{id}',[AccionesController::class,'deleteProductoPedido'])->name('deleteProductoPedido');
 ////
@@ -118,3 +118,15 @@ Route::post('correo/validar-existencia',[AccionesController::class, 'validadCorr
 
 Route::get('pagos/validar-bouchers',[ContadorController::class,'listaPagos'])
 ->name('lista.pagos');
+
+Route::post('pago/ver-boauchers',[ContadorController::class,'show'])
+->name('ver.boucher');
+
+Route::put('pago/autorizar-boucher/{id}',[ContadorController::class,'update'])
+->name('autorizarpago');
+
+Route::get('subir/comprobante/{folio}',[AccionesController::class,'menuComprobante'])
+->name('menuComprobante');
+
+Route::put('subircomprobantes',[AccionesController::class,'subirComprobante'])
+->name('subirComprobante');
