@@ -79,13 +79,7 @@
                                         </td>
                                     </form>
                                     
-                                    <td>
-                                    <form >
-                                        @if($sl->stock !=0)
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comprar Ahora</button>
-                                        @endif
-                                    </form>    
-                                    </td>
+                                
     
                                     
                                     @endcan
