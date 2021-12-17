@@ -11,22 +11,19 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th >Producto</th>
-                            <th >Cantidad</th>
-                            <th >Tipo de Pago</th>
-                            <th >status</th>
-                            <th>folio</th>
+                            <th >Vendedor</th>
+                            <th >Accion</th>
+                            
                         </tr>
                       </thead>
                       <tbody>
                        
                           @foreach ($pd as $p)
                             <tr>
-                                <td>{{$p['nombre']}}</td>
-                                <td>{{$p['cantidad']}}</td>
-                                <td>{{$p['tipopago']}}</td>
-                                <td>{{$p['status']}}</td>
-                                <td>{{$p['folio']}}</td>
+                                <td>{{$p['name']}}</td>
+                                
+                                <td><a href="{{route('vendedorPagos',$p['id'])}}">Ver Ventas</a></td>
+                                <td></td>
                             </tr>
                           @endforeach                            
                          
@@ -37,5 +34,6 @@
             </div>
         </div>
     </div>
-</div>            
+</div>
+
 @endsection

@@ -135,3 +135,9 @@ Route::put('subircomprobantes',[AccionesController::class,'subirComprobante'])
 
 Route::get('allPedidos',[ContadorController::class,'allPedidos'])
 ->name('allPedidos');
+
+Route::get('ListaVendedores',[ContadorController::class,'ListaVendedores'])
+->name('ListaVendedores');
+
+Route::get('vendedorPagos/{id}',[ContadorController::class,'vendedorPagos'])
+->name('vendedorPagos');

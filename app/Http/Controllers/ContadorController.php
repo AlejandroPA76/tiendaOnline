@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PagoVendedor;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use Illuminate\Support\Facades\Auth;
@@ -141,9 +142,65 @@ class ContadorController extends Controller
     }
 
     public function allPedidos(){
-        $pd = Pedido::all();
+        
+
+        $qry = DB::table('pedidos')
+        ->join('productos','pedidos.productos_id','=','productos.id')
+        ->select('productos.nombre','productos.precio','pedidos.tipopago','pedidos.cantidad','pedidos.id','pedidos.status','pedidos.folio')
+        ->where('pedidos.status','!=','carrito')
+        ->get();
+        
+        
+
+        $pd = json_decode(json_encode($qry), true);
 
         return view('contador.boucher.mostrarPedidos',compact('pd'));
+    }
+
+    public function ListaVendedores(){
+        $qry = DB::table('users')
+        ->select('users.id','users.name')
+        ->where('users.rol','=','vendedor')
+        ->get();
+
+        
+
+        $pd = json_decode(json_encode($qry), true);
+
+        return view('contador.boucher.mostrarLVendedores',compact('pd'));
+
+    }
+    public function vendedorPagos($id){
+        $total = 0;
+        $qry = DB::table('users')
+        ->join('productos','users.id','=','productos.propietario')
+        ->join('pedidos','productos.id','=','pedidos.productos_id')
+        ->select('users.id','users.name','productos.nombre','pedidos.cantidad','productos.precio','pedidos.created_at')
+        ->where('users.id', '=' ,$id)
+        ->get();
+
+        
+
+        $pd = json_decode(json_encode($qry), true);
+
+        foreach ($pd as $cs) {
+            $mul = $cs['precio'] * $cs['cantidad'];
+            $total += $mul;
+          }
+        //var_dump($pd);
+        return view('contador.boucher.mostrarVentasVendedor',compact('pd','total'));
+    }
+    public function addPagos($id){
+        $total = 0;
+        $qry = DB::table('users')
+        ->join('productos','users.id','=','productos.propietario')
+        ->join('pedidos','productos.id','=','pedidos.productos_id')
+        ->select('pedidos.cantidad','productos.precio')
+        ->where('users.id', '=' ,$id)
+        ->get();
+
+        
+        
     }
 
 }

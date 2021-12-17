@@ -118,6 +118,7 @@
                     @if(auth()->user()->rol=="contador")
                     <li><a href="{{route("lista.pagos")}}" class="nav-item nav-link active">Autorizar boucher</a></li>
                     <li><a href="{{route("allPedidos")}}" class="nav-item nav-link active">Todas Las Compras</a></li>
+                    <li><a href="{{route("ListaVendedores")}}" class="nav-item nav-link active">Pago Vendedores</a></li>
                     @endif
 
                       <li><a href="{{route('cerrar.usuario')}}" class="nav-item nav-link active">Logout</a></li>
