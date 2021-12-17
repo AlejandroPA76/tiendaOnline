@@ -29,7 +29,7 @@
 
                                     <td>
                                         
-                                            <a  href="{{route('menuComprobante',$cs['folio'])}}" class='btn btn-primary' type="submit">ver Compra</a>   
+                                            <a  href="" class='btn btn-primary' type="submit">ver Compra</a>   
                                         
                                     </td>
                             </tr>

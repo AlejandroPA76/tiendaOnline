@@ -125,8 +125,13 @@ Route::post('pago/ver-boauchers',[ContadorController::class,'showBaucher'])
 Route::put('pago/autorizar-boucher',[ContadorController::class,'autorizarBaucher'])
 ->name('autorizarpago');
 
+
+
 Route::get('subir/comprobante/{folio}',[AccionesController::class,'menuComprobante'])
 ->name('menuComprobante');
 
 Route::put('subircomprobantes',[AccionesController::class,'subirComprobante'])
 ->name('subirComprobante');
+
+Route::get('allPedidos',[ContadorController::class,'allPedidos'])
+->name('allPedidos');

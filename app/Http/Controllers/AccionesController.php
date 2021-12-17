@@ -173,24 +173,23 @@ class AccionesController extends Controller
         //->where('pedidos.user_id','=',$id)
         //->where('pedidos.status','!=','carrito')
         //->get();
-        $qry = DB::select('select distinct folio, status, img from pedidos where user_id = '.auth::user()->id);
+        $qry = DB::select('select distinct folio, status, img from pedidos where status != "carrito" and user_id = '.auth::user()->id);
         
         
 
         $cls = json_decode(json_encode($qry), true);
 
         //foreach ($cls as $cs) {
-        //  $mul = $cs['precio'] * $cs['cantidad'];
-        //  $total += $mul;
+        //  $folio = $cls['folio'];
         //}
 
         
+        //
         
         
-
         
         if($id != auth::user()->id){
-            return redirect('showPedido/'.auth::user()->id);
+            return redirect('showPedidos/'.auth::user()->id);
         }else{
         $id = auth::user()->id;
         return view('cliente.acciones.mostrarMisCompras',compact('cls','id'));
@@ -300,7 +299,7 @@ class AccionesController extends Controller
             $pedido->save();
          }
 
-         return redirect('/');
+         
 
      }
 

@@ -137,8 +137,13 @@ class ContadorController extends Controller
              $pd->save();
 
         }
-
         return redirect('/');
+    }
+
+    public function allPedidos(){
+        $pd = Pedido::all();
+
+        return view('contador.boucher.mostrarPedidos',compact('pd'));
     }
 
 }
