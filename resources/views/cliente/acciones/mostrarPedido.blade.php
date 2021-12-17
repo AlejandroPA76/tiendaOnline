@@ -31,17 +31,26 @@
                           <tbody>
                             @foreach($cls as $cl)
                             	<tr>
-							      <td>{{$cl['nombre']}}</td>
-							      <td>{{$cl['precio']}}</td>
-							      <td>{{$cl['cantidad']}}</td>
-							      <td>{{$cl['cantidad']*$cl['precio']}}</td>
-							    </tr>
+							                    <td>{{$cl['nombre']}}</td>
+							                    <td>{{$cl['precio']}}</td>
+							                    <td>{{$cl['cantidad']}}</td>
+							                    <td>{{$cl['cantidad']*$cl['precio']}}</td>
+							                </tr>
+                              
+
+
                   <input type="hidden" name="folio" value="{{$cl['folio']}}">
 
                             @endforeach
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td><h5>Total de Compra: </h5></td>
+                              <td>{{$total}}</td>
+                            </tr>
 
                             <tr>
-                            	@if($status == "pendiente")
+                            	@if($status == "pendiente" and is_null($img))
                             	<td>
                              
                             <div class="mb-3">

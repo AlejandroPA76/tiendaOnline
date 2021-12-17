@@ -173,7 +173,7 @@ class AccionesController extends Controller
         //->where('pedidos.user_id','=',$id)
         //->where('pedidos.status','!=','carrito')
         //->get();
-        $qry = DB::select('select distinct folio, status, img from pedidos');
+        $qry = DB::select('select distinct folio, status, img from pedidos where user_id = '.auth::user()->id);
         
         
 
@@ -260,6 +260,7 @@ class AccionesController extends Controller
      }
 
      public function menuComprobante(Request $request){
+        $total=0;
         $qry = DB::table('pedidos')
         ->join('productos','pedidos.productos_id','=','productos.id')
         ->select('productos.nombre','productos.precio','pedidos.cantidad','pedidos.id','pedidos.status','pedidos.folio','pedidos.img')
@@ -272,9 +273,12 @@ class AccionesController extends Controller
         foreach($cls as $cl){
           
             $status = $cl['status'];
+            $img =  $cl['img'];
+            $mul = $cl['precio'] * $cl['cantidad'];
+            $total += $mul;
 
         }
-        return view('cliente.acciones.mostrarPedido',compact('cls','status'));
+        return view('cliente.acciones.mostrarPedido',compact('cls','status','img','total'));
      }
 
      public function subirComprobante(Request $request){
@@ -296,7 +300,7 @@ class AccionesController extends Controller
             $pedido->save();
          }
 
-
+         return redirect('/');
 
      }
 

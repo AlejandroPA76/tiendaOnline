@@ -119,10 +119,10 @@ Route::post('correo/validar-existencia',[AccionesController::class, 'validadCorr
 Route::get('pagos/validar-bouchers',[ContadorController::class,'listaPagos'])
 ->name('lista.pagos');
 
-Route::post('pago/ver-boauchers',[ContadorController::class,'show'])
+Route::post('pago/ver-boauchers',[ContadorController::class,'showBaucher'])
 ->name('ver.boucher');
 
-Route::put('pago/autorizar-boucher/{id}',[ContadorController::class,'update'])
+Route::put('pago/autorizar-boucher',[ContadorController::class,'autorizarBaucher'])
 ->name('autorizarpago');
 
 Route::get('subir/comprobante/{folio}',[AccionesController::class,'menuComprobante'])

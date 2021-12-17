@@ -25,27 +25,41 @@
                     <div>
                         <table class="table">
                             <tbody>
+                              <tr>
+                                <img src="{{ asset('storage/'.$ba) }}" class="img-fluid" alt="Eniun" width="700">
+                              </tr>
+
                               @foreach($boucher as $b)
                                 <tr>
-                                  <td class="success">folio: </td>
+                                  <td class="success">producto: </td>
                                     <td>{{$b['nombre']}}</td>
                                 </tr>
-                                
-                                <img src="{{ asset('storage/'.$b['img']) }}" class="img-fluid" alt="Eniun" width="700">
-                                </tr>
-                               
                                 <tr>
-                                       <td class="success">status del pago: </td>
+                                  <td class="success">descripcion: </td>
+                                    <td>{{$b['descripcion']}}</td>
+                                </tr>
+                                <tr>
+                                       <td class="success">precio: </td>
                                     <td>{{$b['precio']}}</td>
                                 </tr>
-
+                                <tr>
+                                  <td class="success">propietario: </td>
+                                  <td>{{$b['propietario']}}</td>
+                                </tr>
                                  <tr>
                                   <td class="success">cantidad: </td>
                                     <td>{{$b['cantidad']}}</td>
                                 </tr>
+
+                                <tr>
+                                  <td><br></td>
+                                </tr>
+
+                              
                                 @endforeach
                                  <tr>
-
+                                    <td>Total de Compra: </td>
+                                    <td>{{$total}}</td>
                                   <td>
 
                                 <!-- Button trigger modal -->
@@ -68,7 +82,7 @@
         @csrf
         @method('put')
          <label class="success">Presiona el boton para aceptar el pago</label>
-         <input type="hidden" name="folio" value="{{$boucher->folio}}">
+         <input type="hidden" name="folio" value="{{$folio}}">
          <input type="hidden" name="status" value="aceptado">
 
           <div class="modal-footer">

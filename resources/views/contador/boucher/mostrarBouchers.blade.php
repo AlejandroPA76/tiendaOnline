@@ -20,7 +20,6 @@
             
                               <th >Folio</th>
                               <th >Status</th>
-                            
                               <th>Acccion</th>
 
                             </tr>
@@ -32,6 +31,7 @@
 							      <td>{{$ppp['status']}}</td>
 							      <td>
                       <input type="hidden" name="folio" value="{{$ppp['folio']}}">
+                      <input type="hidden" name="user_id" value="{{$ppp['user_id']}}">
                        <button type="submit" class="btn btn-primary">Ver</button>
 
                     </td>
