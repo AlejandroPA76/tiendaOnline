@@ -1,65 +1,48 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+### **Sistema web mercado.**
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+##### Este sistema web fue realizado para la materia de programación con frameworks.
 
-## About Laravel
+El proyecto fue efectuado gracias al framework laravel y utilizando mysql como base de datos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+___
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+##### Menú de inicio de la página:
+En este menú se pueden ver las categorías de los productos que se tienen a la venta y cada una de ella contiene más de un producto, cualquier usuario puede ingresar y ver todos los productos sin necesidad de registrarse en el sistema.
 
-## Learning Laravel
+<img src="https://lh3.googleusercontent.com/uyWBGB33dTvcU8F12e5JC3ITfGGXc4O3VDM5xdkXvS_PBwVXRPqLKiOpOJOymLdWsfgPqrKgIc7yrrOYfCK04OWhO_ugjeLulafprOz_997u_HxL8IBxq2jW0DsUoA9ND1WppEWQCJw72uu3XYKwTsdZ-NVtkHSCSpTXFlSghn9nUwj0uf3SUYOeLj3jauZ7F7ZHvAQqliYK7CHO5zoypdm4YSg8wWTpFdENwEx4D_2GF_C8MT8yCktPvnkNegItCzrujHGISRakhwCCAqIk-UHdNJKGV8hPSotG6TuLRtFGzko97g1jHPc6CGMNmBnkqLXI2QEjJi6kbPwlMB-b46Lr5PWjvuvp9WH_LG5lvDaDoqNC4xrhHhBaTcf3eCNTFn3s7uBeu855a4mvLIe-zAFqQXClAIPMgLAwaksObgtK1YglQ5qqWayi0h4QXyoL02o7N06zwsSM1OKK98Ui-R0TZn2r52AOVLtyURPTTAT6_Qpr9J-IO-fWCGh90cIb1Y4jLdanbtmHZQxtYKAINrtcvwS8wQnOlGDi_tWuHVHe1LZmKa1V5kOGmEhnCsszU91PSa9zlfeca_oT9EOiAgrfli-_fDaVFrgMnaTM2aZtRqv7cs2Z5lr4ciiIaDdREM1yIKPTL9NU8DUy3I2E0nWAlxPVrVuGxNhE7KUEsYnRX7Xy_ltygoeZZTyTf6bcACyL5rQ5R1IyJe1TOP-1rYWRLANhLLN78wyVE_42yNbHj7Z1Mpe1Jutc9DtM=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+###### Contenido de la categoría oferta:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<img src="https://lh3.googleusercontent.com/5jVD3XmCSfbj07d9lO6juVAOm5dSyvm40xQ69lsDuw2fI52zmJe4CZj5f2rCeUaLV7QiIh0oYTA9p2feM-yP1mkuRlJumMteGvinxL7pF4FM3XrPZ9m-isitTB5zTV5ns0Uouxy70SRSTFx6tLJbK7m2bcNUIoBb765fqVQZSsEMDCAI5DiO_OQsS2DKJ3Ic86ddYJug2DClx9E7wzRKmXVG6Td_OiwGs5dVgTGSm38zsT2fx5iWiHjoMUi6ACpohaR0twHhrEOmF3ZLlGDHJWJdcBsFMMX2WJX02CUe25Hx42Lh2kjHQPLpTYIs4lY35NgOJwo_OnvgKdvdWEU2WgSf4Na0ieyWFl45K6U2bS-7-O65WeDlPR4AZAqDA-wZBXL6Xd_N0A59AnmtBSPY3QmgvO6tOZlgxFslh28nwqeuWTcTfB3Fsr3CBWNQdMB9gi-kcTHkzhh4ArStcaw6XNSAofbUa2MIMsqyRH6zVS72JUrNAQiFUZPjsuB8yO-vBpuUK9TMqy_NApfSSe_zmLL2TFXVjWkQf-UNNXkxaTrw39umxCsHtvQKsE9datFlQzchA2r8JLlUQNbmzYv15UyrjQeVwfKciIZBuYu7FGA6S6gMY0kvOXwr741ylls14qkRdlnIOn66J4qeAKA6q_ucqiFJ6mwkrvujmVs-2wSN2CkcVnyJZYhtsjQ1sAooU_5ZHQq79zE0Qisj2JbgqQHt5VCckeRorLdqBlfYLmXuR3XqBBaZYgqodyfa=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##### Menú registrarse:
 
-### Premium Partners
+###### Cuando un usuario intenta registrarse tomara el rol de cliente por defecto, mediante el uso de ajax se realiza una consulta para saber si el correo electrónico ingresado por el cliente ya fue utilizado por otro usuario y hacérselo saber.  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<img src="https://lh3.googleusercontent.com/FU2p4dndjQGvWDlOZUSlHQ5UlTZsE_WXqRuh-76EyZ0kHN0keII-mnvJHw48aTv8S3s4PsVaBPW52TaTN5044pwejoI6xrC7On-d8ijfEdiAv7WRpwQn7G77T6h5_n_7FkPz6J-MkXVCNBu6v_SdT4kQsNSs9FNWtqC-SBbJ8773pd4E-CPUTHTxb8DbIVAHnPpV6ATgibXqDdm9vLjXmJuhtGSRC_GS2oYsx-7ZdzgZKIwpOlnbLqaFK0o9lFuhZUy_G6YbCLd7doeBctCnhEPQtqOQ7LjjpoNlcmK4NqdIFzKHpKnfgZ6a_uB_PJXZ6iSr2iKrkyPGh865LCzlN74omjOwdnvyyRv4GqXYyQgM3lQ8B3cB8R3Ba6QyS0_HMDY7SjyOvEP36h175EYTtAyrZgcLEIzRB0c2MRykIOTBKd0dtk_8CMCVlxUAU2Vdvv0GtOmcLj7SMP7rUzxSopPXwy_dgsHrFYnz7Nuyu64nPYy3eRRDt0q-FS9Ypn6Zdtz9CvY-nUU5sJCh2PpEiegmKy2tqtPOJSp3Pa9_-trHimvkC_EHktAhYagWeZA6d-MKuj0huDROAyd0j5eVhJ5mpAnNuSIeLKWuLRXYFUmyzOO9gVmsWXZJVNCWrzJbFzOs6IWBkrFuUZbsL2menUxwGviL7fI1pudglwdmHouTvSDRnkyCzsxK-WTR7ACyCGAf2QuIP44MqV-iXyC1mjl_ONL9Ag3MUeRefTszV-_gPi8XCmiulfKIElnl=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
 
-## Contributing
+##### Menú Supervisor:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+###### Los usuarios supervisores pueden crear categorías, editarlas y borrarlas, de igual manera tiene la posibilidad de crear usuarios y asignarle el rol que quiera.
+<img src="https://lh3.googleusercontent.com/_IUK6m343u76N6OcQDLp4GD41O_ewSUZBqNwfBS8e_zSLnWA52FW7A2vR8ZW6rWgjrMEufUkIPgoSZpy3TBPCMsowkAmmsX2ZRZqyb5pGK2ncPUv387OUaXtdjIalmVUfOxmfs4IlthEAg7UxAfJytlWo18rw66HIPd2Q_Y3zHT0_pfVnGV42FkQ2ewxO6Jsz7KuhzmCBEytkMpuslCoa7FqT4gGcu0SRWcPGlPnlsdZVm9ZnL-20tvyQcsdBHHgCCJn2rEiWw_QbMPqsf_JWZ_BnQpeFyJY0fKLfXdOHTWiuCLw8E86ryLVt23FzsL1S62WUpvyPd-V-vef06-LNYNo8nrhPD9eF_lFLii_iyhaAwrWIffGTFazsM8MYFQDG-FoQX9g0irtlropJDEmEQDbSzUJfz0gtm3E9ROkwCIiXvYVoBeF7yEicPp6W-JFrpRms-osjoafDdeGJVmfWHN8-6JpyRGUEmQARa6Syr-UeSESKKqgGDZc9Nr7wmTTjIc8OjAhv7dUwzc2EsolgHDLJfZiT958sD1DubHygY7-WtPGx0MMsRMu-JM94FIko5Mw3sB7LlenqkLtm8Mwm0Kk0PpGZXXlrBNSkU579VU_wFBMtmCMv8V2K2nSmkrtgwV00WMiInG7bHc1ArUlC5fDhQ5EOdnlNRwrbDXjxxJLnI7n_9psS0TwjwNWJFrlIdsP_ujNhscnaHLs6FBmu6rCkR_2vt7k8q_KXsXsnYh5HBFFw0RPwHgdJVkw=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
 
-## Code of Conduct
+##### Menú contador:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+###### Los usuarios con rol de contador pueden ver todas las ventas realizadas con éxito y autorizar los comprobantes de pago.
+<img src="https://lh3.googleusercontent.com/Oql73XpvQWG5alGtq1JmN043jAA5qpMVCLRQulei1fGs3m6T72pImsSrNPjrkT5nJNf_w5N0QwUqA-s3s46hRIuvNgg6TSZg-FgXUAaE--VhjFC_R8eUQvw4FdJ6Dnd-ll4ngrCP0QY4MgjQeKmpEsfJGmSijQQAxhuOtG9BLfH7-veCyQQiL7mTWKOWg7pKdWn4rlpGJ9IiveANRNXRUls74sQlJWDr9272t_A4xtl9isIqLjreUyjI6W2-174QOyMyfCZzu3eL9fEWxKgczfP5w7QvxV9I1pTpHtyOT7XUuJn15UWiF5TJPnrFZCk4_gDHxCiy-KPLved2Y-CwhmsdXCqHm0ZGZgjLlLGu1lyn4E_aAb06TPFiW5ULfswUuz0Xwk2NYhdBlXJZSFQvu6e1rIPy9yfMe3927j_ypFnIPbM2zqkOT6SzkcY8GopdBZwDmzY-6sSXlvSX22C8uLC6n0w0q2J3V8SmpDVCrkBLEaNM_-faFTgowmr4p1itKlr9h_6_EJtn8kM-2wOJ2eZHSwvLNMJWpKfRnUwv5eRI4OPHkaMcnrGWBemt4Ut-vB4nSPNOz9PjIWRSnQAG3gn5UZxnVvgMzkAYs7ub_v3-a05AWpotKylsk3JDTHV3KEHbtLFXdS0GPN4QY7wUdeEC_bftVrMbaX3gNPgKWjFMXWJze3v9q8ENnosyvNsqNluaQfm86Y2vfY9RSkJxhsi4nePKsNfeczLT36a9p73uj__TGCYk5IDmifwF=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
 
-## Security Vulnerabilities
+##### Menú encargado: 
+###### Los usuarios con el rol de encargado únicamente pueden ver las cuenta de los demás usuarios y editar la información de cada uno, también pueden autorizar los productos que se van a tener a la venta.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<img src="https://lh3.googleusercontent.com/EicLCRiRvrmjzZfqRKXFG21BQnlP_TTPVd9jZ7chkaRNtX6i-BSnJteaKG7jraO9gx2GtWn2JOp0ZoerDnC8JZ3hSevYVU5WhJBFjAE5IlCT1po8BHi7P5BFhsMvut-4fFuqAywJLPZCabDkDU8kwmU9BpmwL5KnpcVnQBzeCu_FeE1oUxLwFtDLlOpLTpu0GJ_d-XDIZoAKkw0EeHz8K5XGJqQCcrFujj8y1q-Ss0KuC0m024FMcX70n6EhRzhEcwfMpW69Bs9tNl9bs5_KdCUzmrLlO3QolJHrRa_s99G83w8CyvL0P4eAqQr3HBYZl1rum8zWDCv64UviCjhHszgjldmkhRF99E_gDKrn1n2Q8mNshf9r8l6UegEHyUOyyPu12X7sKT-rvVs0owZAYnLHqtrr7BrgMCsdP6P5sJ8FNwRkUBJjUZezHRRpTPPSBWUvHgDxdVsonfNDL1SKbA3ezPpKW-lzLNhK7aEPsD2sr5uDDB4gtXjmV6qWRyH3S8KcKXdA5S5kuW389V8O7YsPOFnVP8fhfBRj2T_vc1gyQVWsK4wfJiWLBbS_UM4wCsxqkBkVVWDsRHXV4qFS0heXGxp9la_kaX_3jfcHwpu6IIEAcNDXBM7j-U0E9lG5kePrNmDBl-VflGnLUEVnn3zKlkIr1KZuJEypGh8Krxs351zqNC2nTNV3Cv7B0sYMod8N4E5387M7-I1xJnGBKv01SaEzCaG5FGh7gOaOGDNiAXlyGvOkqxuq5Py1=w1197-h572-no?authuser=0"  alt="JuveR" width="600px" >
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##### Menú cliente: 
+###### Los usuarios que tiene rol de cliente, le permitirá ver todos los productos que se tiene a la venta, aunque el cliente puede convertirse en vendedor si este lo solicita, el cliente-vendedor puede agregar productos para su venta siempre y cuando sea autorizado por un encargado.
+
+<img src="https://lh3.googleusercontent.com/gtbR3AOAXMnvW6ax-jcslYmTCSYY5ybyk8j2AJQ8pBn_rCE9Ft6FQteoYUokHXw6SmfI_AfXoIRJGswOza2lPLoUPjplz520OgZkpkn4lhWUcd-y5qDlfyysOvXF7egYiQFq_wPD1npJRPHlRcPdV9NNBad5MHIk3QX1qMCIJ2H68TfBrd_2oTdXu1J-gWhgqcHE5ak9vX76tyF-AfWnvSQ1S2zUBTwvhe_xwbp5aCXbqn_xMULOf6jydxNLOMoAQ37gYcxMx8xiuFyq6obwC6P0de0XHHZzQFY5JHfOIu30yZ_BtGLJXJgfR4dJVj9ybfyBI5J_8BSxT2O3hcBsoFhI6UoRdXE7KZ2fkLIUoKFaWbIj9OoPgIiR1jteIEaKRkAFHKfjZdap2A5h_8ELDKcJXeg7IQ-FyCp6jVS9iAtuFES2TNorFHxN5DDLQ8AM_DXYjaiL8FWcxdmCA9vRtWUcxbNHqU5Lgb6JWA1yp6e-LUsu0kjrxogdY4U2dYVfKspD3K2PvAGFtJpMAFMFEsDib2w0M0duqHc-JKrLgvlGGBTkF9FgfNj2porxGq7OmvAKQ4pFnPPtANhDh9EOyKwNUwz_-zVm5oyFeNig71F1viydbHn_nSs8CldJmF57_MJXiGC8Df2Qb21S0JubmO_z1fFRhjZue-W8-plEs8CY4BtlB3fNViEoVkwRKSL7AjK1l1GvYplWZ-qBA38dxUrvQWchJ7HDLK9k2sb3qpEwq5QTUIhiCOZ9mNHW=w1197-h572-no?authuser=0"  alt="JuveR" width="600px" >
+
+
+
