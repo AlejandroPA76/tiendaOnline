@@ -10,39 +10,39 @@ ___
 ##### Menú de inicio de la página:
 En este menú se pueden ver las categorías de los productos que se tienen a la venta y cada una de ella contiene más de un producto, cualquier usuario puede ingresar y ver todos los productos sin necesidad de registrarse en el sistema.
 
-<img src="https://lh3.googleusercontent.com/1U2xxDDtajOICUzaX3kWbd3q3LEQS78IVOPGne2g-ZDYMMSy4Av6z1M8QLNhK1NHptzLkmnrFqQQlnavV7TJolb_pY_SDzE6QbQUA0usoV5Emg2DFPqr6po7Z07KiN8RQFI_muKCue3isSWaFEa6827CWxFIxoTFHJszbhQFC5Qoa90o9KStSpSGTKf5cJ3FZkPu6_WYlwnG5S_Egc3-Blc1d6f3BxQ8Ieho9iWk3Zap0PiTsAvsFoW2XrHEUsYfsQVRBN8CjDP4u6_ft2yPPaeUqsC2Vtfhxizk_ewFNEelh7uNfjcleKuS5n82xeoiUddO6t-ABcmBTAIjoZ6Ix_NkXJlbdJDqGs0D4zm2DjXity7MQJJpUELA8G4gyYshrZQwBeCD7tE2FAazDDgr91M90EAU4hDc7qCSgYEghCHnhH2VCc_uM8-p7knfldy14j2cdvPnQRWuDtxAs1nDliMLXyNcscNNq8W1hwZv3ODr1EJltHYhOItWNwuhDKGR_88U9tSKJxYa1jSaNQ4JG4_UebvzPOBTG0KBmRgGYyCdHpTsJnWp99Xpa5s0DpJa1RL6ZN6dnt-tHEdAsdUGZ-hTl3rSmGjKkPVMGnI_puBLuzwuUPSVauwAf50yBk-qn4i42mpvYq6pNw89VkOWVYo1oC8Fj0Jxcdlb94bQ54EeG9c_D23fdaTnHijlLXwTNP13l-2rU1reWf1QsZVGb9u6_YMsw5nsZbCwSooBGGwLBWbqpADxchF1DFnj=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
+<img src="https://raw.githubusercontent.com/AlejandroPA76/imgs/main/Screenshot_20220417_154230.png" alt="JuveR" width="600px" >
 
 ###### Contenido de la categoría oferta:
 
-<img src="https://lh3.googleusercontent.com/zc5UUMqMV2dR5Xs_wGmtKxlmCCnZstN_B7ldvNN6jYOSqS5_0LdiwfD8t16Q_FPZ-6ZIr1rcvtxS2fWQby96CtWh4mOcaXRZqv0zgyszWIXZw9XHpw6_3fSwL3GGJtQ5nbFgWt2I6Xz4MLkep0Bys8FaTq2ETKFpD531sjsxkXFM7V90-vVCCc7ZuqLz3Jp4y0QVGqatAPIV8P6RVnGToYyQE419NCMYSAr3HmsPbYXy4xTdxAh2hA4DqaUK6vYDZA-YvZ0Ww_m7r2zD2MYawuTSvxpDt5W-fA8iB6rSq9vqDspXUtGA_mZQQ9-6aGe3lqH7354HtoO_HI0ssLb3ldxmVogagg6Oxwv_4t4pkLutVkBZl2xGczKLQ8ZEqxTbVsRHQbSNc418SlmutohcXzaNgHpV1IhU7AybApCGJeKrnOTtjOCMWxNvkNBUnmvsQnKnlC_q350KMhHtgukb6nGsNI87CCTjKcW9fJSy8w-HP2K0Mi0ScKvgQYhIFGZb5ZkAt21tOOtmN8zcqugfiFJ8WB3USFcMKaXHyGvvgZbU9onGfGUxuRKPbKUy8x4gT_1WrDeteBZfpBA4baj1fU7q_0lHsCaeSnxx2VpR9PCjZIYPcKQBPrZ85THeokwuHLCHvyzrRx44e0TY4rEisxysaVXJWupQbsIoChVwu7CMWOKSH5eZC6fdYDm8T4sXz47B3jk9cX2dd83zeNMHcOfX_ZtNg8p2Gf7pHcYopKtVpn90Va_U5e5j2CZL=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
+<img src="https://raw.githubusercontent.com/AlejandroPA76/imgs/main/Screenshot_20220417_154915.png" alt="JuveR" width="600px" >
 
 
 ##### Menú registrarse:
 
 ###### Cuando un usuario intenta registrarse tomara el rol de cliente por defecto, mediante el uso de ajax se realiza una consulta para saber si el correo electrónico ingresado por el cliente ya fue utilizado por otro usuario y hacérselo saber.  
 
-<img src="https://lh3.googleusercontent.com/ytaes-uXV-gF_WxZ2TxwY-WNC0XfeJGgxaLhauShzG65z6KK32YtXlfkk4TnQYT4fd-Yomm89kMIMym12cJwjGTphLa-mHhwHmqR6zWyMUKe-nq3r8hQCqv76N_1CD9FLO9dUIaQVajRLQPd0JxaWGHelnUVv7slTWBbNa-aSiMA0n_hpkd_ERAHoHr6BEAHqlw28PSBmDSh93POSQRW8QV7_-CHfk5h4tInnHTvUSUcXJM4Ukx4Krw_WTQyWZOpDIBs79RXfRABbEVH-J1qj9_FgahSoxeElJuH3bJ5VQeS7zgujrXgXhRE_haLV-c9rIehX8A5ANcM5rdsj96bTEmPnqlGMCWNscOaYtTlz6dnAUDcRoM229fBUY0yj8ROWQmHzeWIS2d9_2UA8lhpFXcgeATKsEMxFFlDwDReUPsOuTmFK_2kSvZkshz2hg96xRNPyCF15-SEU_rgkesRmxuKuw8sKGWM8pP82_nM_BG6yJ0WKAKhauEvcBYJtVRvTUCNdVmqlo3C0QBayS738ndVLtyNWfS0nNylX0rI-QaPjRo7gQVzV0nlXYywXDz0fXHhLs6f8i7vIkRUNF9BIE1lJRsbGHx38LpFHH-SprRpD34Jy36HZRsxQKEHJfXgWlkyF9T0AoYQGx-f7ckylkwQ_PNRSMDO7F0z2WBPzZndxoBzynNBaig4u_H_b6r4I9oPuWFr6IVaWTMmdAwD-C03x-cH2KbPiR1GCZ_cfuC-eQNhf-cAeQ5NVa8M=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
+<img src="https://raw.githubusercontent.com/AlejandroPA76/imgs/main/Screenshot_20220417_154742.png" alt="JuveR" width="600px" >
 
 ##### Menú Supervisor:
 
 ###### Los usuarios supervisores pueden crear categorías, editarlas y borrarlas, de igual manera tiene la posibilidad de crear usuarios y asignarle el rol que quiera.
-<img src="https://lh3.googleusercontent.com/_IUK6m343u76N6OcQDLp4GD41O_ewSUZBqNwfBS8e_zSLnWA52FW7A2vR8ZW6rWgjrMEufUkIPgoSZpy3TBPCMsowkAmmsX2ZRZqyb5pGK2ncPUv387OUaXtdjIalmVUfOxmfs4IlthEAg7UxAfJytlWo18rw66HIPd2Q_Y3zHT0_pfVnGV42FkQ2ewxO6Jsz7KuhzmCBEytkMpuslCoa7FqT4gGcu0SRWcPGlPnlsdZVm9ZnL-20tvyQcsdBHHgCCJn2rEiWw_QbMPqsf_JWZ_BnQpeFyJY0fKLfXdOHTWiuCLw8E86ryLVt23FzsL1S62WUpvyPd-V-vef06-LNYNo8nrhPD9eF_lFLii_iyhaAwrWIffGTFazsM8MYFQDG-FoQX9g0irtlropJDEmEQDbSzUJfz0gtm3E9ROkwCIiXvYVoBeF7yEicPp6W-JFrpRms-osjoafDdeGJVmfWHN8-6JpyRGUEmQARa6Syr-UeSESKKqgGDZc9Nr7wmTTjIc8OjAhv7dUwzc2EsolgHDLJfZiT958sD1DubHygY7-WtPGx0MMsRMu-JM94FIko5Mw3sB7LlenqkLtm8Mwm0Kk0PpGZXXlrBNSkU579VU_wFBMtmCMv8V2K2nSmkrtgwV00WMiInG7bHc1ArUlC5fDhQ5EOdnlNRwrbDXjxxJLnI7n_9psS0TwjwNWJFrlIdsP_ujNhscnaHLs6FBmu6rCkR_2vt7k8q_KXsXsnYh5HBFFw0RPwHgdJVkw=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
+<img src="https://raw.githubusercontent.com/AlejandroPA76/imgs/main/Screenshot_20220417_153134.png" alt="JuveR" width="600px" >
 
 ##### Menú contador:
 
 ###### Los usuarios con rol de contador pueden ver todas las ventas realizadas con éxito y autorizar los comprobantes de pago.
-<img src="https://lh3.googleusercontent.com/Oql73XpvQWG5alGtq1JmN043jAA5qpMVCLRQulei1fGs3m6T72pImsSrNPjrkT5nJNf_w5N0QwUqA-s3s46hRIuvNgg6TSZg-FgXUAaE--VhjFC_R8eUQvw4FdJ6Dnd-ll4ngrCP0QY4MgjQeKmpEsfJGmSijQQAxhuOtG9BLfH7-veCyQQiL7mTWKOWg7pKdWn4rlpGJ9IiveANRNXRUls74sQlJWDr9272t_A4xtl9isIqLjreUyjI6W2-174QOyMyfCZzu3eL9fEWxKgczfP5w7QvxV9I1pTpHtyOT7XUuJn15UWiF5TJPnrFZCk4_gDHxCiy-KPLved2Y-CwhmsdXCqHm0ZGZgjLlLGu1lyn4E_aAb06TPFiW5ULfswUuz0Xwk2NYhdBlXJZSFQvu6e1rIPy9yfMe3927j_ypFnIPbM2zqkOT6SzkcY8GopdBZwDmzY-6sSXlvSX22C8uLC6n0w0q2J3V8SmpDVCrkBLEaNM_-faFTgowmr4p1itKlr9h_6_EJtn8kM-2wOJ2eZHSwvLNMJWpKfRnUwv5eRI4OPHkaMcnrGWBemt4Ut-vB4nSPNOz9PjIWRSnQAG3gn5UZxnVvgMzkAYs7ub_v3-a05AWpotKylsk3JDTHV3KEHbtLFXdS0GPN4QY7wUdeEC_bftVrMbaX3gNPgKWjFMXWJze3v9q8ENnosyvNsqNluaQfm86Y2vfY9RSkJxhsi4nePKsNfeczLT36a9p73uj__TGCYk5IDmifwF=w1197-h572-no?authuser=0" alt="JuveR" width="600px" >
+<img src="https://raw.githubusercontent.com/AlejandroPA76/imgs/main/Screenshot_20220417_153223.png" alt="JuveR" width="600px" >
 
 ##### Menú encargado: 
 ###### Los usuarios con el rol de encargado únicamente pueden ver las cuenta de los demás usuarios y editar la información de cada uno, también pueden autorizar los productos que se van a tener a la venta.
 
-<img src="https://lh3.googleusercontent.com/EicLCRiRvrmjzZfqRKXFG21BQnlP_TTPVd9jZ7chkaRNtX6i-BSnJteaKG7jraO9gx2GtWn2JOp0ZoerDnC8JZ3hSevYVU5WhJBFjAE5IlCT1po8BHi7P5BFhsMvut-4fFuqAywJLPZCabDkDU8kwmU9BpmwL5KnpcVnQBzeCu_FeE1oUxLwFtDLlOpLTpu0GJ_d-XDIZoAKkw0EeHz8K5XGJqQCcrFujj8y1q-Ss0KuC0m024FMcX70n6EhRzhEcwfMpW69Bs9tNl9bs5_KdCUzmrLlO3QolJHrRa_s99G83w8CyvL0P4eAqQr3HBYZl1rum8zWDCv64UviCjhHszgjldmkhRF99E_gDKrn1n2Q8mNshf9r8l6UegEHyUOyyPu12X7sKT-rvVs0owZAYnLHqtrr7BrgMCsdP6P5sJ8FNwRkUBJjUZezHRRpTPPSBWUvHgDxdVsonfNDL1SKbA3ezPpKW-lzLNhK7aEPsD2sr5uDDB4gtXjmV6qWRyH3S8KcKXdA5S5kuW389V8O7YsPOFnVP8fhfBRj2T_vc1gyQVWsK4wfJiWLBbS_UM4wCsxqkBkVVWDsRHXV4qFS0heXGxp9la_kaX_3jfcHwpu6IIEAcNDXBM7j-U0E9lG5kePrNmDBl-VflGnLUEVnn3zKlkIr1KZuJEypGh8Krxs351zqNC2nTNV3Cv7B0sYMod8N4E5387M7-I1xJnGBKv01SaEzCaG5FGh7gOaOGDNiAXlyGvOkqxuq5Py1=w1197-h572-no?authuser=0"  alt="JuveR" width="600px" >
+<img src="https://raw.githubusercontent.com/AlejandroPA76/imgs/main/Screenshot_20220417_153304.png"  alt="JuveR" width="600px" >
 
 
 ##### Menú cliente: 
 ###### Los usuarios que tiene rol de cliente, le permitirá ver todos los productos que se tiene a la venta, aunque el cliente puede convertirse en vendedor si este lo solicita, el cliente-vendedor puede agregar productos para su venta siempre y cuando sea autorizado por un encargado.
 
-<img src="https://lh3.googleusercontent.com/gtbR3AOAXMnvW6ax-jcslYmTCSYY5ybyk8j2AJQ8pBn_rCE9Ft6FQteoYUokHXw6SmfI_AfXoIRJGswOza2lPLoUPjplz520OgZkpkn4lhWUcd-y5qDlfyysOvXF7egYiQFq_wPD1npJRPHlRcPdV9NNBad5MHIk3QX1qMCIJ2H68TfBrd_2oTdXu1J-gWhgqcHE5ak9vX76tyF-AfWnvSQ1S2zUBTwvhe_xwbp5aCXbqn_xMULOf6jydxNLOMoAQ37gYcxMx8xiuFyq6obwC6P0de0XHHZzQFY5JHfOIu30yZ_BtGLJXJgfR4dJVj9ybfyBI5J_8BSxT2O3hcBsoFhI6UoRdXE7KZ2fkLIUoKFaWbIj9OoPgIiR1jteIEaKRkAFHKfjZdap2A5h_8ELDKcJXeg7IQ-FyCp6jVS9iAtuFES2TNorFHxN5DDLQ8AM_DXYjaiL8FWcxdmCA9vRtWUcxbNHqU5Lgb6JWA1yp6e-LUsu0kjrxogdY4U2dYVfKspD3K2PvAGFtJpMAFMFEsDib2w0M0duqHc-JKrLgvlGGBTkF9FgfNj2porxGq7OmvAKQ4pFnPPtANhDh9EOyKwNUwz_-zVm5oyFeNig71F1viydbHn_nSs8CldJmF57_MJXiGC8Df2Qb21S0JubmO_z1fFRhjZue-W8-plEs8CY4BtlB3fNViEoVkwRKSL7AjK1l1GvYplWZ-qBA38dxUrvQWchJ7HDLK9k2sb3qpEwq5QTUIhiCOZ9mNHW=w1197-h572-no?authuser=0"  alt="JuveR" width="600px" >
+<img src="https://raw.githubusercontent.com/AlejandroPA76/imgs/main/Screenshot_20220417_153358.png"  alt="JuveR" width="600px" >
 
 
 
